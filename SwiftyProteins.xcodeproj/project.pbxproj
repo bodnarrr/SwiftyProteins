@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		0DDA0273210CA23F0087C42F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0272210CA23F0087C42F /* AppDelegate.swift */; };
-		0DDA0275210CA23F0087C42F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0274210CA23F0087C42F /* ViewController.swift */; };
 		0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0276210CA23F0087C42F /* Main.storyboard */; };
 		0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0279210CA23F0087C42F /* Assets.xcassets */; };
 		0DDA027D210CA23F0087C42F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA027B210CA23F0087C42F /* LaunchScreen.storyboard */; };
+		0DDA0289210CA40B0087C42F /* TableSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0288210CA40B0087C42F /* TableSceneModel.swift */; };
+		0DDA028B210CA41F0087C42F /* TableSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA028A210CA41F0087C42F /* TableSceneViewController.swift */; };
+		0DDA028E210CA50A0087C42F /* ligands.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA028D210CA50A0087C42F /* ligands.txt */; };
+		0DDA0290210CAB350087C42F /* ProteinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA028F210CAB350087C42F /* ProteinCell.swift */; };
+		0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0292210CB8D60087C42F /* ApiManager.swift */; };
+		0DDA0295210CBBBC0087C42F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0294210CBBBC0087C42F /* Podfile */; };
+		90E414E2E28C1714C7367973 /* Pods_SwiftyProteins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DDA026F210CA23F0087C42F /* SwiftyProteins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProteins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDA0272210CA23F0087C42F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0DDA0274210CA23F0087C42F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0DDA0277210CA23F0087C42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DDA0279210CA23F0087C42F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DDA027C210CA23F0087C42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DDA027E210CA23F0087C42F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DDA0288210CA40B0087C42F /* TableSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSceneModel.swift; sourceTree = "<group>"; };
+		0DDA028A210CA41F0087C42F /* TableSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSceneViewController.swift; sourceTree = "<group>"; };
+		0DDA028D210CA50A0087C42F /* ligands.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ligands.txt; sourceTree = "<group>"; };
+		0DDA028F210CAB350087C42F /* ProteinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinCell.swift; sourceTree = "<group>"; };
+		0DDA0292210CB8D60087C42F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		0DDA0294210CBBBC0087C42F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProteins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98524E1C12FAFA240DC2EF5A /* Pods-SwiftyProteins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteins/Pods-SwiftyProteins.debug.xcconfig"; sourceTree = "<group>"; };
+		9D00E86F1A7B17BDE935DA55 /* Pods-SwiftyProteins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteins.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteins/Pods-SwiftyProteins.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E414E2E28C1714C7367973 /* Pods_SwiftyProteins.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +55,8 @@
 			children = (
 				0DDA0271210CA23F0087C42F /* SwiftyProteins */,
 				0DDA0270210CA23F0087C42F /* Products */,
+				C348282D7F7DD614084DE355 /* Pods */,
+				59FA4591154D1099A08EAA20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,84 @@
 		0DDA0271210CA23F0087C42F /* SwiftyProteins */ = {
 			isa = PBXGroup;
 			children = (
+				0DDA0294210CBBBC0087C42F /* Podfile */,
+				0DDA0291210CB8C70087C42F /* Managers */,
+				0DDA028C210CA4B00087C42F /* Resources */,
+				0DDA0284210CA3C70087C42F /* Scenes */,
 				0DDA0272210CA23F0087C42F /* AppDelegate.swift */,
-				0DDA0274210CA23F0087C42F /* ViewController.swift */,
 				0DDA0276210CA23F0087C42F /* Main.storyboard */,
 				0DDA0279210CA23F0087C42F /* Assets.xcassets */,
 				0DDA027B210CA23F0087C42F /* LaunchScreen.storyboard */,
 				0DDA027E210CA23F0087C42F /* Info.plist */,
 			);
 			path = SwiftyProteins;
+			sourceTree = "<group>";
+		};
+		0DDA0284210CA3C70087C42F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA0287210CA3EF0087C42F /* ProteinViewScene */,
+				0DDA0286210CA3DF0087C42F /* TableScene */,
+				0DDA0285210CA3CE0087C42F /* LoginScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0DDA0285210CA3CE0087C42F /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		0DDA0286210CA3DF0087C42F /* TableScene */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA0288210CA40B0087C42F /* TableSceneModel.swift */,
+				0DDA028A210CA41F0087C42F /* TableSceneViewController.swift */,
+				0DDA028F210CAB350087C42F /* ProteinCell.swift */,
+			);
+			path = TableScene;
+			sourceTree = "<group>";
+		};
+		0DDA0287210CA3EF0087C42F /* ProteinViewScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProteinViewScene;
+			sourceTree = "<group>";
+		};
+		0DDA028C210CA4B00087C42F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA028D210CA50A0087C42F /* ligands.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0DDA0291210CB8C70087C42F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA0292210CB8D60087C42F /* ApiManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		59FA4591154D1099A08EAA20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C348282D7F7DD614084DE355 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98524E1C12FAFA240DC2EF5A /* Pods-SwiftyProteins.debug.xcconfig */,
+				9D00E86F1A7B17BDE935DA55 /* Pods-SwiftyProteins.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DDA0281210CA23F0087C42F /* Build configuration list for PBXNativeTarget "SwiftyProteins" */;
 			buildPhases = (
+				819FF671E31A8753488D0807 /* [CP] Check Pods Manifest.lock */,
 				0DDA026B210CA23F0087C42F /* Sources */,
 				0DDA026C210CA23F0087C42F /* Frameworks */,
 				0DDA026D210CA23F0087C42F /* Resources */,
+				4381AEB917B4C0DAAE35980B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,20 +212,64 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDA0295210CBBBC0087C42F /* Podfile in Resources */,
 				0DDA027D210CA23F0087C42F /* LaunchScreen.storyboard in Resources */,
 				0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */,
 				0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */,
+				0DDA028E210CA50A0087C42F /* ligands.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4381AEB917B4C0DAAE35980B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyProteins/Pods-SwiftyProteins-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyProteins/Pods-SwiftyProteins-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		819FF671E31A8753488D0807 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftyProteins-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DDA026B210CA23F0087C42F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DDA0275210CA23F0087C42F /* ViewController.swift in Sources */,
+				0DDA0289210CA40B0087C42F /* TableSceneModel.swift in Sources */,
+				0DDA0290210CAB350087C42F /* ProteinCell.swift in Sources */,
+				0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */,
+				0DDA028B210CA41F0087C42F /* TableSceneViewController.swift in Sources */,
 				0DDA0273210CA23F0087C42F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +405,7 @@
 		};
 		0DDA0282210CA23F0087C42F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98524E1C12FAFA240DC2EF5A /* Pods-SwiftyProteins.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +420,7 @@
 		};
 		0DDA0283210CA23F0087C42F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D00E86F1A7B17BDE935DA55 /* Pods-SwiftyProteins.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
