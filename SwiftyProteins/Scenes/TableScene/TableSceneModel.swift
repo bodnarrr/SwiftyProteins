@@ -9,11 +9,11 @@
 import Foundation
 
 enum LigandElement {
-	case atom
-	case connect
+    case atom
+    case connect
 }
 
 class TableSceneVewModel {
-	
-	var proteinsList: [String] = []
+    
+    var proteinsList: [String] = []
 }

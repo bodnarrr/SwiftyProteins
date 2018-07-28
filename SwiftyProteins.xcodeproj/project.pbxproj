@@ -17,6 +17,7 @@
 		0DDA0290210CAB350087C42F /* ProteinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA028F210CAB350087C42F /* ProteinCell.swift */; };
 		0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0292210CB8D60087C42F /* ApiManager.swift */; };
 		0DDA0295210CBBBC0087C42F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0294210CBBBC0087C42F /* Podfile */; };
+		84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */; };
 		90E414E2E28C1714C7367973 /* Pods_SwiftyProteins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		0DDA0292210CB8D60087C42F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		0DDA0294210CBBBC0087C42F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProteins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinViewSceneController.swift; sourceTree = "<group>"; };
 		98524E1C12FAFA240DC2EF5A /* Pods-SwiftyProteins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteins/Pods-SwiftyProteins.debug.xcconfig"; sourceTree = "<group>"; };
 		9D00E86F1A7B17BDE935DA55 /* Pods-SwiftyProteins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteins.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteins/Pods-SwiftyProteins.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +89,7 @@
 		0DDA0284210CA3C70087C42F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0DDA0287210CA3EF0087C42F /* ProteinViewScene */,
+				84924B91210CFB9600F8852D /* ProteinSceneView */,
 				0DDA0286210CA3DF0087C42F /* TableScene */,
 				0DDA0285210CA3CE0087C42F /* LoginScene */,
 			);
@@ -109,13 +111,6 @@
 				0DDA028F210CAB350087C42F /* ProteinCell.swift */,
 			);
 			path = TableScene;
-			sourceTree = "<group>";
-		};
-		0DDA0287210CA3EF0087C42F /* ProteinViewScene */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ProteinViewScene;
 			sourceTree = "<group>";
 		};
 		0DDA028C210CA4B00087C42F /* Resources */ = {
@@ -140,6 +135,14 @@
 				69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84924B91210CFB9600F8852D /* ProteinSceneView */ = {
+			isa = PBXGroup;
+			children = (
+				84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */,
+			);
+			path = ProteinSceneView;
 			sourceTree = "<group>";
 		};
 		C348282D7F7DD614084DE355 /* Pods */ = {
@@ -268,6 +271,7 @@
 			files = (
 				0DDA0289210CA40B0087C42F /* TableSceneModel.swift in Sources */,
 				0DDA0290210CAB350087C42F /* ProteinCell.swift in Sources */,
+				84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */,
 				0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */,
 				0DDA028B210CA41F0087C42F /* TableSceneViewController.swift in Sources */,
 				0DDA0273210CA23F0087C42F /* AppDelegate.swift in Sources */,
