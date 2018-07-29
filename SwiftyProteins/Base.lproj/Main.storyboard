@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CcX-Se-gTo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CcX-Se-gTo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica-Light</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Table Scene View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -82,16 +77,19 @@
             </objects>
             <point key="canvasLocation" x="1445.5999999999999" y="91.304347826086968"/>
         </scene>
-        <!--View Controller-->
+        <!--Protein View Scene Controller-->
         <scene sceneID="p7x-nX-bRN">
             <objects>
-                <viewController id="i6v-P7-nng" sceneMemberID="viewController">
+                <viewController id="i6v-P7-nng" customClass="ProteinViewSceneController" customModule="SwiftyProteins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GN2-Yl-lpY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QuQ-Oz-j5z">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="i6v-P7-nng" id="C3D-EQ-LQD"/>
+                                </connections>
                             </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,6 +101,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SZe-fz-S5N"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="QuQ-Oz-j5z" id="VrB-9q-pyU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGK-1N-pYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
