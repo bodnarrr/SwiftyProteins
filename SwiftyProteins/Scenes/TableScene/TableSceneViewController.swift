@@ -52,8 +52,6 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
 		cell.proteinNameLabel.text = model.proteinsList[indexPath.row]
-		cell.activityIndicator.isHidden = true
-		
 		return cell
 	}
 	
@@ -61,7 +59,7 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		let proteinName = model.proteinsList[indexPath.row]
 		ApiManager.shared.getModelFromAPI(proteinName) { [weak self] (receivedData) in
-			print(receivedData)
+			self?.model.parseReceivedData(receivedData)
 			self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
 		}
 	}
