@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CcX-Se-gTo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WVD-oi-avQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica-Light</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Table Scene View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -127,5 +135,53 @@
             </objects>
             <point key="canvasLocation" x="673.60000000000002" y="92.653673163418304"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="hJh-El-7gr">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="WVD-oi-avQ" customClass="LoginViewController" customModule="SwiftyProteins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="itj-54-ZoZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rz-rN-yq3">
+                                <rect key="frame" x="86" y="52" width="203" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="203" id="0ms-lx-Ofa"/>
+                                    <constraint firstAttribute="height" constant="41" id="rTq-Mb-39e"/>
+                                </constraints>
+                                <string key="text">Please, confirm youself with
+TouchID</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touch_id_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Gq6-ib-RLc">
+                                <rect key="frame" x="77" y="223.5" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="58e-bk-rBb"/>
+                                    <constraint firstAttribute="height" constant="220" id="NK1-2f-o9q"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Rz-rN-yq3" firstAttribute="centerX" secondItem="itj-54-ZoZ" secondAttribute="centerX" id="7hn-GV-zsA"/>
+                            <constraint firstItem="Gq6-ib-RLc" firstAttribute="centerY" secondItem="itj-54-ZoZ" secondAttribute="centerY" id="DC2-Si-3wQ"/>
+                            <constraint firstItem="Gq6-ib-RLc" firstAttribute="centerX" secondItem="itj-54-ZoZ" secondAttribute="centerX" id="Hr2-m2-tfn"/>
+                            <constraint firstItem="9Rz-rN-yq3" firstAttribute="top" secondItem="Rme-oG-RaS" secondAttribute="top" constant="32" id="OoD-VI-saO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rme-oG-RaS"/>
+                    </view>
+                    <connections>
+                        <segue destination="CcX-Se-gTo" kind="show" identifier="segueToTableScene" id="1CK-og-aGc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L73-iI-Hhw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-217" y="90"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="touch_id_icon" width="250" height="250"/>
+    </resources>
 </document>

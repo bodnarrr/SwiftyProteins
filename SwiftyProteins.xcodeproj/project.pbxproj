@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D2BF1BB210DE5490023F98D /* ProteinViewSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BF1BA210DE5490023F98D /* ProteinViewSceneModel.swift */; };
+		0D2BF1BE210DF4A20023F98D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BF1BD210DF4A20023F98D /* LoginViewController.swift */; };
+		0D2BF1C0210DF7650023F98D /* TouchIdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BF1BF210DF7650023F98D /* TouchIdManager.swift */; };
 		0DDA0273210CA23F0087C42F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0272210CA23F0087C42F /* AppDelegate.swift */; };
 		0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0276210CA23F0087C42F /* Main.storyboard */; };
 		0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0279210CA23F0087C42F /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		0D2BF1BA210DE5490023F98D /* ProteinViewSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinViewSceneModel.swift; sourceTree = "<group>"; };
+		0D2BF1BD210DF4A20023F98D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0D2BF1BF210DF7650023F98D /* TouchIdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIdManager.swift; sourceTree = "<group>"; };
 		0DDA026F210CA23F0087C42F /* SwiftyProteins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyProteins.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDA0272210CA23F0087C42F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DDA0277210CA23F0087C42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D2BF1BC210DF42B0023F98D /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				0D2BF1BD210DF4A20023F98D /* LoginViewController.swift */,
+			);
+			name = LoginScene;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		0DDA0266210CA23F0087C42F = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +104,7 @@
 		0DDA0284210CA3C70087C42F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0D2BF1BC210DF42B0023F98D /* LoginScene */,
 				84924B91210CFB9600F8852D /* ProteinSceneView */,
 				0DDA0286210CA3DF0087C42F /* TableScene */,
 				0DDA0285210CA3CE0087C42F /* LoginScene */,
@@ -127,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				0DDA0292210CB8D60087C42F /* ApiManager.swift */,
+				0D2BF1BF210DF7650023F98D /* TouchIdManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -272,10 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D2BF1C0210DF7650023F98D /* TouchIdManager.swift in Sources */,
 				0DDA0289210CA40B0087C42F /* TableSceneModel.swift in Sources */,
 				0DDA0290210CAB350087C42F /* ProteinCell.swift in Sources */,
 				84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */,
 				0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */,
+				0D2BF1BE210DF4A20023F98D /* LoginViewController.swift in Sources */,
 				0DDA028B210CA41F0087C42F /* TableSceneViewController.swift in Sources */,
 				0DDA0273210CA23F0087C42F /* AppDelegate.swift in Sources */,
 				0D2BF1BB210DE5490023F98D /* ProteinViewSceneModel.swift in Sources */,
