@@ -10,6 +10,8 @@ import Foundation
 import SceneKit
 
 class ProteinViewSceneController : UIViewController {
+	
+	let model = ProteinViewSceneModel()
 
     @IBOutlet weak var sceneView: SCNView!
 

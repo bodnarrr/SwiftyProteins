@@ -63,6 +63,12 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
 			self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
 		}
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let viewController = segue.destination as? ProteinViewSceneController {
+			viewController.model.protein = model.selectedProtein
+		}
+	}
 
 }
 
