@@ -25,7 +25,19 @@ class TouchIdManager {
 		let context = LAContext()
 		let ableToUseTouchId = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
 		if ableToUseTouchId {
-			print("ABLE")
+			context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Logging in with Touch ID") { [weak self] (success, evaluateError) in
+				if success {
+					DispatchQueue.main.async {
+						if (self?.authorized)! {
+							viewController.dismiss(animated: true, completion: nil)
+						} else {
+							viewController.performSegue(withIdentifier: "segueToTableScene", sender: self)
+						}
+					}
+				} else {
+//					self?.authRequest(viewController)
+				}
+			}
 		} else {
 			viewController.showUnsafeModeAlert()
 		}

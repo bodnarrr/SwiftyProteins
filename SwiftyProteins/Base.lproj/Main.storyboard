@@ -157,10 +157,14 @@ TouchID</string>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touch_id_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Gq6-ib-RLc">
                                 <rect key="frame" x="77" y="223.5" width="220" height="220"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="58e-bk-rBb"/>
                                     <constraint firstAttribute="height" constant="220" id="NK1-2f-o9q"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ROg-mZ-FnB" appends="YES" id="PNo-fy-L3s"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,6 +181,11 @@ TouchID</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L73-iI-Hhw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ROg-mZ-FnB">
+                    <connections>
+                        <action selector="iconTapped:" destination="WVD-oi-avQ" id="55S-9W-8fn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-217" y="90"/>
         </scene>

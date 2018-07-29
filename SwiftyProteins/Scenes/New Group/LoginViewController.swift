@@ -19,24 +19,8 @@ class LoginViewController: UIViewController {
 		TouchIdManager.shared.authRequest(self)
 	}
 	
-	
-
-}
-
-extension UIViewController {
-	
-	func showUnsafeModeAlert() {
-		
-		let alert = UIAlertController(title: "TouchID is unavailable on current device!", message: "Warning! Work in unsafe mode!", preferredStyle: .alert)
-		let action = UIAlertAction(title: "Ok", style: .default) { [weak self] (action) in
-			if TouchIdManager.shared.authorized {
-				self?.dismiss(animated: true, completion: nil)
-			} else {
-				TouchIdManager.shared.authorized = true
-				self?.performSegue(withIdentifier: "segueToTableScene", sender: self)
-			}
-		}
-		alert.addAction(action)
-		self.present(alert, animated: true, completion: nil)
+	@IBAction func iconTapped(_ sender: UITapGestureRecognizer) {
+		print(sender)
 	}
+	
 }

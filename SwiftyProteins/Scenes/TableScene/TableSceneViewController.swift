@@ -14,7 +14,7 @@ class TableSceneViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
@@ -38,6 +38,7 @@ class TableSceneViewController: UIViewController {
             assert(true, "File Not Found. WTF?")
         }
     }
+	
 }
 
 // MARK: - TableView delegate functions
