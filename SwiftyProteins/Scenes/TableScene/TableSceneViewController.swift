@@ -50,7 +50,7 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let cell = tableView.cellForRow(at: indexPath) as! ProteinCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
 		cell.proteinNameLabel.text = model.proteinsList[indexPath.row]
 		cell.activityIndicator.isHidden = true
 		
