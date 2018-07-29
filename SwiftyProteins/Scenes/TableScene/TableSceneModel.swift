@@ -25,6 +25,8 @@ class TableSceneVewModel {
         var minCoord = GLKVector3Make(1e20, 1e20, 1e20)
         var maxCoord = GLKVector3Make(1e-20, 1e-20, 1e-20)
 
+        selectedProtein.removeAll()
+
 		for line in lines {
 			let splittedLine = line.components(separatedBy: " ")
 			let cleanLine = removeBlankItems(splittedLine)
@@ -56,7 +58,7 @@ class TableSceneVewModel {
             if case let .atom(atom) = element {
                 let centeredAtomPosition = GLKVector3Make(atom.coordX - proteinCenter.x, atom.coordY - proteinCenter.y, atom.coordZ - proteinCenter.z)
                 let normalizedAtomPosition = GLKVector3Divide(centeredAtomPosition, proteinHalfDimensions)
-                let scaledAtomPosition = GLKVector3MultiplyScalar(normalizedAtomPosition, 5.0)
+                let scaledAtomPosition = GLKVector3MultiplyScalar(normalizedAtomPosition, 25.0)
                 selectedProtein[index] = ProteinElement.atom(number: atom.number, type: atom.type,
                                                              coordX: scaledAtomPosition.x, coordY: scaledAtomPosition.y, coordZ: scaledAtomPosition.z)
             } else {

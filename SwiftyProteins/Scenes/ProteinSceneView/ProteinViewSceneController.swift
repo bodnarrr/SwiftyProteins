@@ -56,13 +56,21 @@ class ProteinViewSceneController : UIViewController {
         let scene = SCNScene()
         sceneView.scene = scene
 
-        let atomRadius: CGFloat = 0.25
+        let atomMaterial = SCNMaterial()
+        atomMaterial.lightingModel = .physicallyBased
+        atomMaterial.diffuse.contents = UIImage(named: "T_Brick_Baked_D.tga")
+        atomMaterial.ambientOcclusion.contents = UIImage(named: "T_Brick_Baked_AO.tga")
+        atomMaterial.normal.contents = UIImage(named: "T_Brick_Baked_N.tga")
+        atomMaterial.roughness.contents = UIImage(named: "T_Brick_Baked_R.tga")
+
+        let atomRadius: CGFloat = 1.5
         let proteinNode = SCNNode()
         for proteinElement in model.protein {
             switch proteinElement {
                 case .atom(let number, let type, let coordX, let coordY, let coordZ):
                     let atom = SCNSphere(radius: atomRadius)
-                    atom.materials.first?.diffuse.contents = UIColor.red
+                    atom.materials = [atomMaterial]
+                    atom.firstMaterial = atomMaterial
                     let atomNode = SCNNode(geometry: atom)
                     atomNode.position = SCNVector3Make(coordX, coordY, coordZ)
                     proteinNode.addChildNode(atomNode)
@@ -75,6 +83,7 @@ class ProteinViewSceneController : UIViewController {
 
                                 let linkNode = SCNNode.lineNode(from: fromVec3, to: toVec3, radius: atomRadius * 0.25)
                                 linkNode.geometry?.materials.first?.diffuse.contents = UIColor.blue
+                                linkNode.geometry?.materials.first?.lightingModel = .physicallyBased
                                 proteinNode.addChildNode(linkNode)
                             }
                         }
@@ -82,7 +91,10 @@ class ProteinViewSceneController : UIViewController {
             }
         }
 
-        scene.rootNode.addChildNode(lightNode())
+        scene.lightingEnvironment.contents = "sunny.png"
+        scene.lightingEnvironment.intensity = 1.0
+        scene.background.contents = "sunny.png"
+
         cameraNode = setupCamera()
         scene.rootNode.addChildNode(cameraNode)
         scene.rootNode.addChildNode(proteinNode)
@@ -90,7 +102,6 @@ class ProteinViewSceneController : UIViewController {
         sceneView.allowsCameraControl = true
         sceneView.showsStatistics = true
     }
-
 
     func lightNode() -> SCNNode {
         let lightNode = SCNNode()
@@ -113,7 +124,9 @@ class ProteinViewSceneController : UIViewController {
 
     func setupCamera() -> SCNNode {
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3Make(0, 0, 25)
+        cameraNode.position = SCNVector3Make(0, 0, 50)
+        cameraNode.camera?.wantsHDR = true
+        cameraNode.camera?.automaticallyAdjustsZRange = true
 
         return cameraNode
     }
