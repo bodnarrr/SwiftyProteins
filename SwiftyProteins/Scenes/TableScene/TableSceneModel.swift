@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GLKit
 
 enum ProteinElement {
 	case atom(number: Int, type: String,  coordX: Float, coordY: Float, coordZ: Float)
@@ -20,6 +21,10 @@ class TableSceneVewModel {
 	
 	func parseReceivedData(_ data: String) {
 		let lines = data.components(separatedBy: "\n")
+
+        var minCoord = GLKVector3Make(1e20, 1e20, 1e20)
+        var maxCoord = GLKVector3Make(1e-20, 1e-20, 1e-20)
+
 		for line in lines {
 			let splittedLine = line.components(separatedBy: " ")
 			let cleanLine = removeBlankItems(splittedLine)
@@ -30,6 +35,10 @@ class TableSceneVewModel {
 				let y = Float(cleanLine[7])!
 				let z = Float(cleanLine[8])!
 				selectedProtein.append(ProteinElement.atom(number: number, type: type!, coordX: x, coordY: y, coordZ: z))
+
+                let coord = GLKVector3Make(x, y, z)
+                minCoord = GLKVector3Minimum(minCoord, coord)
+                maxCoord = GLKVector3Maximum(maxCoord, coord)
 			} else if cleanLine.first == "CONECT" {
 				let connectFrom = Int(cleanLine[1])!
 				var connectWith: [Int] = []
@@ -40,6 +49,20 @@ class TableSceneVewModel {
 				selectedProtein.append(ProteinElement.connect(from: connectFrom, to: connectWith))
 			}
 		}
+
+        let proteinHalfDimensions = GLKVector3MultiplyScalar(GLKVector3Subtract(maxCoord, minCoord), 0.5)
+        let proteinCenter = GLKVector3MultiplyScalar(GLKVector3Add(maxCoord, minCoord), 0.5)
+        for (index, element) in selectedProtein.enumerated() {
+            if case let .atom(atom) = element {
+                let centeredAtomPosition = GLKVector3Make(atom.coordX - proteinCenter.x, atom.coordY - proteinCenter.y, atom.coordZ - proteinCenter.z)
+                let normalizedAtomPosition = GLKVector3Divide(centeredAtomPosition, proteinHalfDimensions)
+                let scaledAtomPosition = GLKVector3MultiplyScalar(normalizedAtomPosition, 5.0)
+                selectedProtein[index] = ProteinElement.atom(number: atom.number, type: atom.type,
+                                                             coordX: scaledAtomPosition.x, coordY: scaledAtomPosition.y, coordZ: scaledAtomPosition.z)
+            } else {
+                break
+            }
+        }
 	}
 	
 	private func removeBlankItems(_ array: [String]) -> [String] {
