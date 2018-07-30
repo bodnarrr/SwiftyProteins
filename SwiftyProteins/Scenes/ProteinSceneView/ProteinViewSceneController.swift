@@ -8,6 +8,7 @@
 
 import Foundation
 import SceneKit
+import SpriteKit
 
 extension SCNNode {
     static func lineNode(from: SCNVector3, to: SCNVector3, radius: CGFloat = 0.25) -> SCNNode {
@@ -84,21 +85,44 @@ extension SCNVector3 {
 }
 
 class ProteinViewSceneController : UIViewController {
-	
-	let model = ProteinViewSceneModel()
+
+    let model = ProteinViewSceneModel()
 
     @IBOutlet weak var sceneView: SCNView!
 
     var cameraNode = SCNNode()
+    let atomsNode = SCNNode()
+
+    let circle = SKShapeNode(circleOfRadius: 20)
+    let atomLabel = SKLabelNode(fontNamed: "Arial-BoldMT")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let spriteScene = SKScene(size: sceneView.frame.size)
+
+        circle.position = CGPoint(x: spriteScene.frame.midX, y: spriteScene.frame.midY)
+        circle.strokeColor = .clear
+        circle.fillColor = .blue
+        circle.glowWidth = 1.0
+
+        atomLabel.text = "C"
+        atomLabel.horizontalAlignmentMode = .center
+        atomLabel.verticalAlignmentMode = .center
+        atomLabel.fontSize = 20
+        atomLabel.fontColor = UIColor.black
+
+        circle.alpha = 0.0
+        circle.addChild(atomLabel)
+        spriteScene.addChild(circle)
+
         let scene = SCNScene()
         sceneView.scene = scene
+        sceneView.overlaySKScene = spriteScene
 
         let atomMaterial = SCNMaterial()
-        atomMaterial.lightingModel = .physicallyBased
+//        atomMaterial.lightingModel = .physicallyBased
+        atomMaterial.lightingModel = .lambert
         atomMaterial.normal.contents = UIImage(named: "metal_nrm.jpg")
         atomMaterial.roughness.contents = UIImage(named: "metal_rgh.jpg")
         atomMaterial.displacement.contents = UIImage(named: "metal_disp.jpg")
@@ -109,15 +133,16 @@ class ProteinViewSceneController : UIViewController {
         let proteinNode = SCNNode()
         for proteinElement in model.protein {
             switch proteinElement {
-                case .atom(let number, let type, let coordX, let coordY, let coordZ):
+            case .atom( _, let type, let coordX, let coordY, let coordZ):
                     let atom = SCNSphere(radius: atomRadius)
                     let material = atomMaterial.copy() as! SCNMaterial
                     material.diffuse.contents = UIColor.CPK(atomType: type)
                     atom.materials = [material]
                     atom.firstMaterial = material
                     let atomNode = SCNNode(geometry: atom)
+                    atomNode.name = type
                     atomNode.position = SCNVector3Make(coordX, coordY, coordZ)
-                    proteinNode.addChildNode(atomNode)
+                    atomsNode.addChildNode(atomNode)
                 case .connect(let from, let to):
                     if case let .atom(fromAtom) = model.protein[from - 1] {
                         let fromVec3 = SCNVector3Make(fromAtom.coordX, fromAtom.coordY, fromAtom.coordZ)
@@ -127,17 +152,18 @@ class ProteinViewSceneController : UIViewController {
 
                                 let linkNode = SCNNode.lineNode(from: fromVec3, to: toVec3, radius: atomRadius * 0.25)
                                 linkNode.geometry?.materials.first?.diffuse.contents = linkColor
-                                linkNode.geometry?.materials.first?.lightingModel = .physicallyBased
+//                                linkNode.geometry?.materials.first?.lightingModel = .physicallyBased
                                 proteinNode.addChildNode(linkNode)
                             }
                         }
                     }
             }
         }
+        proteinNode.addChildNode(atomsNode)
 
-        scene.lightingEnvironment.contents = "sunny.png"
-        scene.lightingEnvironment.intensity = 1.0
-        scene.background.contents = "sunny.png"
+//        scene.lightingEnvironment.contents = "sunny.png"
+//        scene.lightingEnvironment.intensity = 1.0
+//        scene.background.contents = "sunny.png"
 
         cameraNode = setupCamera()
         scene.rootNode.addChildNode(cameraNode)
@@ -145,6 +171,7 @@ class ProteinViewSceneController : UIViewController {
 
         sceneView.allowsCameraControl = true
         sceneView.showsStatistics = true
+        sceneView.autoenablesDefaultLighting = true
     }
 
     func lightNode() -> SCNNode {
@@ -166,10 +193,39 @@ class ProteinViewSceneController : UIViewController {
         return lightNode
     }
 
+    @IBAction func sceneTapAction(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            let location = sender.location(in: sceneView)
+            let hits = sceneView.hitTest(location, options: [.rootNode : atomsNode])
+            if let tappedNode = hits.first?.node,
+                let atomName = tappedNode.name {
+                print("Tapped on \(atomName)")
+
+                let circlePosition = CGPoint(x: location.x, y: sceneView.frame.maxY - (location.y - 10.0))
+//                let path = CGMutablePath()
+//                path.move(to: location)
+//                path.addLine(to: circlePosition)
+
+                self.circle.alpha = 0.0
+                self.circle.xScale = 0.0
+                self.circle.yScale = 0.0
+                self.circle.position = location
+                NSLog("go to animation")
+                UIView.animate(withDuration: 1.0, delay: 1.0, options: [], animations: {
+                    self.circle.alpha = 1.0
+                    self.circle.xScale = 1.0
+                    self.circle.yScale = 1.0
+                    self.circle.position = circlePosition
+                }) { (finished) in
+                    NSLog("finished")
+                }
+            }
+        }
+    }
+
     func setupCamera() -> SCNNode {
         cameraNode.camera = SCNCamera()
         cameraNode.position = SCNVector3Make(0, 0, 50)
-        cameraNode.camera?.wantsHDR = true
         cameraNode.camera?.automaticallyAdjustsZRange = true
 
         return cameraNode
