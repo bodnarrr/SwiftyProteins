@@ -21,7 +21,14 @@
 		0DDA0290210CAB350087C42F /* ProteinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA028F210CAB350087C42F /* ProteinCell.swift */; };
 		0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0292210CB8D60087C42F /* ApiManager.swift */; };
 		0DDA0295210CBBBC0087C42F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0294210CBBBC0087C42F /* Podfile */; };
+		13ECD0D8210E0E6D00A1CA7B /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ECD0D7210E0E6D00A1CA7B /* SCNVector3Extensions.swift */; };
 		84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */; };
+		84924B95210E42FC00F8852D /* cathedral.hdr in Resources */ = {isa = PBXBuildFile; fileRef = 84924B94210E42FC00F8852D /* cathedral.hdr */; };
+		84924B97210E46A800F8852D /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 84924B96210E46A800F8852D /* sunny.png */; };
+		84924B9C210E4CBB00F8852D /* T_Brick_Baked_D.tga in Resources */ = {isa = PBXBuildFile; fileRef = 84924B98210E4CBA00F8852D /* T_Brick_Baked_D.tga */; };
+		84924B9D210E4CBB00F8852D /* T_Brick_Baked_AO.tga in Resources */ = {isa = PBXBuildFile; fileRef = 84924B99210E4CBB00F8852D /* T_Brick_Baked_AO.tga */; };
+		84924B9E210E4CBB00F8852D /* T_Brick_Baked_R.tga in Resources */ = {isa = PBXBuildFile; fileRef = 84924B9A210E4CBB00F8852D /* T_Brick_Baked_R.tga */; };
+		84924B9F210E4CBB00F8852D /* T_Brick_Baked_N.tga in Resources */ = {isa = PBXBuildFile; fileRef = 84924B9B210E4CBB00F8852D /* T_Brick_Baked_N.tga */; };
 		90E414E2E28C1714C7367973 /* Pods_SwiftyProteins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +49,15 @@
 		0DDA028F210CAB350087C42F /* ProteinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinCell.swift; sourceTree = "<group>"; };
 		0DDA0292210CB8D60087C42F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		0DDA0294210CBBBC0087C42F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		13ECD0D7210E0E6D00A1CA7B /* SCNVector3Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector3Extensions.swift; sourceTree = "<group>"; };
 		69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProteins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinViewSceneController.swift; sourceTree = "<group>"; };
+		84924B94210E42FC00F8852D /* cathedral.hdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cathedral.hdr; sourceTree = "<group>"; };
+		84924B96210E46A800F8852D /* sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunny.png; sourceTree = "<group>"; };
+		84924B98210E4CBA00F8852D /* T_Brick_Baked_D.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = T_Brick_Baked_D.tga; sourceTree = "<group>"; };
+		84924B99210E4CBB00F8852D /* T_Brick_Baked_AO.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = T_Brick_Baked_AO.tga; sourceTree = "<group>"; };
+		84924B9A210E4CBB00F8852D /* T_Brick_Baked_R.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = T_Brick_Baked_R.tga; sourceTree = "<group>"; };
+		84924B9B210E4CBB00F8852D /* T_Brick_Baked_N.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = T_Brick_Baked_N.tga; sourceTree = "<group>"; };
 		98524E1C12FAFA240DC2EF5A /* Pods-SwiftyProteins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteins/Pods-SwiftyProteins.debug.xcconfig"; sourceTree = "<group>"; };
 		9D00E86F1A7B17BDE935DA55 /* Pods-SwiftyProteins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteins.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteins/Pods-SwiftyProteins.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +157,12 @@
 		0DDA028C210CA4B00087C42F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84924B99210E4CBB00F8852D /* T_Brick_Baked_AO.tga */,
+				84924B98210E4CBA00F8852D /* T_Brick_Baked_D.tga */,
+				84924B9B210E4CBB00F8852D /* T_Brick_Baked_N.tga */,
+				84924B9A210E4CBB00F8852D /* T_Brick_Baked_R.tga */,
+				84924B96210E46A800F8852D /* sunny.png */,
+				84924B94210E42FC00F8852D /* cathedral.hdr */,
 				0DDA028D210CA50A0087C42F /* ligands.txt */,
 			);
 			path = Resources;
@@ -168,6 +188,7 @@
 		84924B91210CFB9600F8852D /* ProteinSceneView */ = {
 			isa = PBXGroup;
 			children = (
+				13ECD0D7210E0E6D00A1CA7B /* SCNVector3Extensions.swift */,
 				84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */,
 				0D2BF1BA210DE5490023F98D /* ProteinViewSceneModel.swift */,
 			);
@@ -244,9 +265,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84924B9F210E4CBB00F8852D /* T_Brick_Baked_N.tga in Resources */,
+				84924B9E210E4CBB00F8852D /* T_Brick_Baked_R.tga in Resources */,
+				84924B97210E46A800F8852D /* sunny.png in Resources */,
+				84924B9D210E4CBB00F8852D /* T_Brick_Baked_AO.tga in Resources */,
 				0DDA0295210CBBBC0087C42F /* Podfile in Resources */,
 				0DDA027D210CA23F0087C42F /* LaunchScreen.storyboard in Resources */,
 				0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */,
+				84924B9C210E4CBB00F8852D /* T_Brick_Baked_D.tga in Resources */,
+				84924B95210E42FC00F8852D /* cathedral.hdr in Resources */,
 				0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */,
 				0DDA028E210CA50A0087C42F /* ligands.txt in Resources */,
 			);
@@ -308,6 +335,7 @@
 				0DDA028B210CA41F0087C42F /* TableSceneViewController.swift in Sources */,
 				0DDA0273210CA23F0087C42F /* AppDelegate.swift in Sources */,
 				0D2BF1BB210DE5490023F98D /* ProteinViewSceneModel.swift in Sources */,
+				13ECD0D8210E0E6D00A1CA7B /* SCNVector3Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6CXT6RVZG5;
 				INFOPLIST_FILE = SwiftyProteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.unit.SwiftyProteins;
@@ -461,6 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6CXT6RVZG5;
 				INFOPLIST_FILE = SwiftyProteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.unit.SwiftyProteins;
