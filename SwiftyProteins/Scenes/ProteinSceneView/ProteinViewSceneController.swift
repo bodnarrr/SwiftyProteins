@@ -22,6 +22,47 @@ extension SCNNode {
     }
 }
 
+extension UIColor {
+    static func random() -> UIColor {
+        let red = CGFloat(arc4random() % 255) / 255.0
+        let green = CGFloat(arc4random() % 255) / 255.0
+        let blue = CGFloat(arc4random() % 255) / 255.0
+        return UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1.0)
+    }
+
+    convenience init(hexString: String, alpha: CGFloat = 1.0) {
+
+        var hexInt: UInt32 = 0
+        let scanner: Scanner = Scanner(string: hexString)
+        scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
+        scanner.scanHexInt32(&hexInt)
+
+        let red = CGFloat((hexInt & 0xff0000) >> 16) / 255.0
+        let green = CGFloat((hexInt & 0xff00) >> 8) / 255.0
+        let blue = CGFloat((hexInt & 0xff) >> 0) / 255.0
+
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+
+    static let CPKColors = [
+        "C" : UIColor.black,
+        "O" : UIColor(hexString: "f00000"),
+        "H" : UIColor.white,
+        "N" : UIColor(hexString: "8f8fff"),
+        "S" : UIColor(hexString: "ffc832"),
+        "P" : UIColor(hexString: "ffa500"),
+        "Cl" : UIColor.green,
+        "F" : UIColor.green
+    ]
+
+    static func CPK(atomType: String) -> UIColor {
+        if let color = CPKColors[atomType] {
+            return color
+        }
+        return UIColor(hexString: "ff1493")
+    }
+}
+
 extension SCNVector3 {
     static func lineEulerAngles(vector: SCNVector3) -> SCNVector3 {
         let height = vector.length()
@@ -58,19 +99,22 @@ class ProteinViewSceneController : UIViewController {
 
         let atomMaterial = SCNMaterial()
         atomMaterial.lightingModel = .physicallyBased
-        atomMaterial.diffuse.contents = UIImage(named: "T_Brick_Baked_D.tga")
-        atomMaterial.ambientOcclusion.contents = UIImage(named: "T_Brick_Baked_AO.tga")
-        atomMaterial.normal.contents = UIImage(named: "T_Brick_Baked_N.tga")
-        atomMaterial.roughness.contents = UIImage(named: "T_Brick_Baked_R.tga")
+        atomMaterial.normal.contents = UIImage(named: "metal_nrm.jpg")
+        atomMaterial.roughness.contents = UIImage(named: "metal_rgh.jpg")
+        atomMaterial.displacement.contents = UIImage(named: "metal_disp.jpg")
+        atomMaterial.metalness.contents = UIImage(named: "metal_met.jpg")
 
+        let linkColor = UIColor(hexString: "c8c8c8")
         let atomRadius: CGFloat = 1.5
         let proteinNode = SCNNode()
         for proteinElement in model.protein {
             switch proteinElement {
                 case .atom(let number, let type, let coordX, let coordY, let coordZ):
                     let atom = SCNSphere(radius: atomRadius)
-                    atom.materials = [atomMaterial]
-                    atom.firstMaterial = atomMaterial
+                    let material = atomMaterial.copy() as! SCNMaterial
+                    material.diffuse.contents = UIColor.CPK(atomType: type)
+                    atom.materials = [material]
+                    atom.firstMaterial = material
                     let atomNode = SCNNode(geometry: atom)
                     atomNode.position = SCNVector3Make(coordX, coordY, coordZ)
                     proteinNode.addChildNode(atomNode)
@@ -82,7 +126,7 @@ class ProteinViewSceneController : UIViewController {
                                 let toVec3 = SCNVector3Make(toAtom.coordX, toAtom.coordY, toAtom.coordZ)
 
                                 let linkNode = SCNNode.lineNode(from: fromVec3, to: toVec3, radius: atomRadius * 0.25)
-                                linkNode.geometry?.materials.first?.diffuse.contents = UIColor.blue
+                                linkNode.geometry?.materials.first?.diffuse.contents = linkColor
                                 linkNode.geometry?.materials.first?.lightingModel = .physicallyBased
                                 proteinNode.addChildNode(linkNode)
                             }
