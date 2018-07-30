@@ -22,13 +22,8 @@
 		0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0292210CB8D60087C42F /* ApiManager.swift */; };
 		0DDA0295210CBBBC0087C42F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0294210CBBBC0087C42F /* Podfile */; };
 		13ECD0D8210E0E6D00A1CA7B /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ECD0D7210E0E6D00A1CA7B /* SCNVector3Extensions.swift */; };
+		3B8632D0210F6DFC002D4001 /* StartingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8632CF210F6DFC002D4001 /* StartingNavigationViewController.swift */; };
 		84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */; };
-		84924B95210E42FC00F8852D /* cathedral.hdr in Resources */ = {isa = PBXBuildFile; fileRef = 84924B94210E42FC00F8852D /* cathedral.hdr */; };
-		84924B97210E46A800F8852D /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 84924B96210E46A800F8852D /* sunny.png */; };
-		84924B9C210E4CBB00F8852D /* T_Brick_Baked_D.tga in Resources */ = {isa = PBXBuildFile; fileRef = 84924B98210E4CBA00F8852D /* T_Brick_Baked_D.tga */; };
-		84924B9D210E4CBB00F8852D /* T_Brick_Baked_AO.tga in Resources */ = {isa = PBXBuildFile; fileRef = 84924B99210E4CBB00F8852D /* T_Brick_Baked_AO.tga */; };
-		84924B9E210E4CBB00F8852D /* T_Brick_Baked_R.tga in Resources */ = {isa = PBXBuildFile; fileRef = 84924B9A210E4CBB00F8852D /* T_Brick_Baked_R.tga */; };
-		84924B9F210E4CBB00F8852D /* T_Brick_Baked_N.tga in Resources */ = {isa = PBXBuildFile; fileRef = 84924B9B210E4CBB00F8852D /* T_Brick_Baked_N.tga */; };
 		90E414E2E28C1714C7367973 /* Pods_SwiftyProteins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +45,7 @@
 		0DDA0292210CB8D60087C42F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		0DDA0294210CBBBC0087C42F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		13ECD0D7210E0E6D00A1CA7B /* SCNVector3Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector3Extensions.swift; sourceTree = "<group>"; };
+		3B8632CF210F6DFC002D4001 /* StartingNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingNavigationViewController.swift; sourceTree = "<group>"; };
 		69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProteins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinViewSceneController.swift; sourceTree = "<group>"; };
 		84924B94210E42FC00F8852D /* cathedral.hdr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cathedral.hdr; sourceTree = "<group>"; };
@@ -118,6 +114,7 @@
 				0DDA028C210CA4B00087C42F /* Resources */,
 				0DDA0284210CA3C70087C42F /* Scenes */,
 				0DDA0272210CA23F0087C42F /* AppDelegate.swift */,
+				3B8632CF210F6DFC002D4001 /* StartingNavigationViewController.swift */,
 				0DDA0276210CA23F0087C42F /* Main.storyboard */,
 				0DDA0279210CA23F0087C42F /* Assets.xcassets */,
 				0DDA027B210CA23F0087C42F /* LaunchScreen.storyboard */,
@@ -132,16 +129,8 @@
 				0D2BF1BC210DF42B0023F98D /* LoginScene */,
 				84924B91210CFB9600F8852D /* ProteinSceneView */,
 				0DDA0286210CA3DF0087C42F /* TableScene */,
-				0DDA0285210CA3CE0087C42F /* LoginScene */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		0DDA0285210CA3CE0087C42F /* LoginScene */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LoginScene;
 			sourceTree = "<group>";
 		};
 		0DDA0286210CA3DF0087C42F /* TableScene */ = {
@@ -265,15 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84924B9F210E4CBB00F8852D /* T_Brick_Baked_N.tga in Resources */,
-				84924B9E210E4CBB00F8852D /* T_Brick_Baked_R.tga in Resources */,
-				84924B97210E46A800F8852D /* sunny.png in Resources */,
-				84924B9D210E4CBB00F8852D /* T_Brick_Baked_AO.tga in Resources */,
 				0DDA0295210CBBBC0087C42F /* Podfile in Resources */,
 				0DDA027D210CA23F0087C42F /* LaunchScreen.storyboard in Resources */,
 				0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */,
-				84924B9C210E4CBB00F8852D /* T_Brick_Baked_D.tga in Resources */,
-				84924B95210E42FC00F8852D /* cathedral.hdr in Resources */,
 				0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */,
 				0DDA028E210CA50A0087C42F /* ligands.txt in Resources */,
 			);
@@ -329,6 +312,7 @@
 				0D2BF1C3210E14150023F98D /* UIViewController+UnsafeAlert.swift in Sources */,
 				0DDA0289210CA40B0087C42F /* TableSceneModel.swift in Sources */,
 				0DDA0290210CAB350087C42F /* ProteinCell.swift in Sources */,
+				3B8632D0210F6DFC002D4001 /* StartingNavigationViewController.swift in Sources */,
 				84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */,
 				0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */,
 				0D2BF1BE210DF4A20023F98D /* LoginViewController.swift in Sources */,

@@ -58,10 +58,10 @@ class ProteinViewSceneController : UIViewController {
 
         let atomMaterial = SCNMaterial()
         atomMaterial.lightingModel = .physicallyBased
-        atomMaterial.diffuse.contents = UIImage(named: "T_Brick_Baked_D.tga")
-        atomMaterial.ambientOcclusion.contents = UIImage(named: "T_Brick_Baked_AO.tga")
-        atomMaterial.normal.contents = UIImage(named: "T_Brick_Baked_N.tga")
-        atomMaterial.roughness.contents = UIImage(named: "T_Brick_Baked_R.tga")
+//        atomMaterial.diffuse.contents = UIImage(named: "T_Brick_Baked_D.tga")
+//        atomMaterial.ambientOcclusion.contents = UIImage(named: "T_Brick_Baked_AO.tga")
+//        atomMaterial.normal.contents = UIImage(named: "T_Brick_Baked_N.tga")
+//        atomMaterial.roughness.contents = UIImage(named: "T_Brick_Baked_R.tga")
 
         let atomRadius: CGFloat = 1.5
         let proteinNode = SCNNode()

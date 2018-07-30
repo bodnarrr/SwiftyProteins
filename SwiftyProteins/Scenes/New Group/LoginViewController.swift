@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
 	}
 	
 	@IBAction func iconTapped(_ sender: UITapGestureRecognizer) {
-		print(sender)
+		TouchIdManager.shared.authRequest(self)
 	}
 	
 }

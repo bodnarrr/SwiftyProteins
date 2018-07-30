@@ -31,11 +31,10 @@ class TouchIdManager {
 						if (self?.authorized)! {
 							viewController.dismiss(animated: true, completion: nil)
 						} else {
+							self?.authorized = true
 							viewController.performSegue(withIdentifier: "segueToTableScene", sender: self)
 						}
 					}
-				} else {
-//					self?.authRequest(viewController)
 				}
 			}
 		} else {
