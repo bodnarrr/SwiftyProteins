@@ -9,6 +9,7 @@
 import Foundation
 import SceneKit
 import SpriteKit
+import CoreGraphics
 
 extension SCNNode {
     static func lineNode(from: SCNVector3, to: SCNVector3, radius: CGFloat = 0.25) -> SCNNode {
@@ -29,6 +30,19 @@ extension UIColor {
         let green = CGFloat(arc4random() % 255) / 255.0
         let blue = CGFloat(arc4random() % 255) / 255.0
         return UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1.0)
+    }
+
+    func coreImageColor() -> CIColor {
+        return CIColor(color: self)
+    }
+
+    func mid(color: UIColor) -> UIColor {
+        let lhs = self.coreImageColor()
+        let rhs = color.coreImageColor()
+        return UIColor(red: (lhs.red + rhs.red) / 2,
+                       green: (lhs.green + rhs.green) / 2,
+                       blue: (lhs.blue + rhs.blue) / 2,
+                       alpha: (lhs.alpha + rhs.alpha) / 2)
     }
 
     convenience init(hexString: String, alpha: CGFloat = 1.0) {
@@ -93,18 +107,23 @@ class ProteinViewSceneController : UIViewController {
     var cameraNode = SCNNode()
     let atomsNode = SCNNode()
 
+    var spriteScene: SKScene = SKScene.init()
     let circle = SKShapeNode(circleOfRadius: 20)
     let atomLabel = SKLabelNode(fontNamed: "Arial-BoldMT")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let spriteScene = SKScene(size: sceneView.frame.size)
+        spriteScene = SKScene(size: sceneView.bounds.size)
 
         circle.position = CGPoint(x: spriteScene.frame.midX, y: spriteScene.frame.midY)
         circle.strokeColor = .clear
         circle.fillColor = .blue
-        circle.glowWidth = 1.0
+        circle.glowWidth = 10.0
+        circle.lineWidth = 5.0
+        circle.isAntialiased = true
+        circle.yScale = 0.0
+        circle.xScale = 0.0
 
         atomLabel.text = "C"
         atomLabel.horizontalAlignmentMode = .center
@@ -112,7 +131,6 @@ class ProteinViewSceneController : UIViewController {
         atomLabel.fontSize = 20
         atomLabel.fontColor = UIColor.black
 
-        circle.alpha = 0.0
         circle.addChild(atomLabel)
         spriteScene.addChild(circle)
 
@@ -120,22 +138,24 @@ class ProteinViewSceneController : UIViewController {
         sceneView.scene = scene
         sceneView.overlaySKScene = spriteScene
 
-        let atomMaterial = SCNMaterial()
-//        atomMaterial.lightingModel = .physicallyBased
-        atomMaterial.lightingModel = .lambert
-        atomMaterial.normal.contents = UIImage(named: "metal_nrm.jpg")
-        atomMaterial.roughness.contents = UIImage(named: "metal_rgh.jpg")
-        atomMaterial.displacement.contents = UIImage(named: "metal_disp.jpg")
-        atomMaterial.metalness.contents = UIImage(named: "metal_met.jpg")
+        let nrmTexture = UIImage(named: "metal_nrm.jpg")
+        let rghTexture = UIImage(named: "metal_rgh.jpg")
+        let metTexture = UIImage(named: "metal_met.jpg")
+
+        let defaultMaterial = SCNMaterial()
+        defaultMaterial.lightingModel = .physicallyBased
+        defaultMaterial.normal.contents = nrmTexture
+        defaultMaterial.roughness.contents = rghTexture
+        defaultMaterial.metalness.contents = metTexture
 
         let linkColor = UIColor(hexString: "c8c8c8")
         let atomRadius: CGFloat = 1.5
         let proteinNode = SCNNode()
         for proteinElement in model.protein {
             switch proteinElement {
-            case .atom( _, let type, let coordX, let coordY, let coordZ):
+                case .atom( _, let type, let coordX, let coordY, let coordZ):
                     let atom = SCNSphere(radius: atomRadius)
-                    let material = atomMaterial.copy() as! SCNMaterial
+                    let material = defaultMaterial.copy() as! SCNMaterial
                     material.diffuse.contents = UIColor.CPK(atomType: type)
                     atom.materials = [material]
                     atom.firstMaterial = material
@@ -151,8 +171,11 @@ class ProteinViewSceneController : UIViewController {
                                 let toVec3 = SCNVector3Make(toAtom.coordX, toAtom.coordY, toAtom.coordZ)
 
                                 let linkNode = SCNNode.lineNode(from: fromVec3, to: toVec3, radius: atomRadius * 0.25)
-                                linkNode.geometry?.materials.first?.diffuse.contents = linkColor
-//                                linkNode.geometry?.materials.first?.lightingModel = .physicallyBased
+
+                                let linkMaterial = defaultMaterial.copy() as! SCNMaterial
+                                linkMaterial.diffuse.contents = linkColor
+                                linkNode.geometry?.materials = [linkMaterial]
+                                linkNode.geometry?.firstMaterial = linkMaterial
                                 proteinNode.addChildNode(linkNode)
                             }
                         }
@@ -161,9 +184,9 @@ class ProteinViewSceneController : UIViewController {
         }
         proteinNode.addChildNode(atomsNode)
 
-//        scene.lightingEnvironment.contents = "sunny.png"
-//        scene.lightingEnvironment.intensity = 1.0
-//        scene.background.contents = "sunny.png"
+        scene.lightingEnvironment.contents = "sunny.png"
+        scene.lightingEnvironment.intensity = 1.0
+        scene.background.contents = "sunny.png"
 
         cameraNode = setupCamera()
         scene.rootNode.addChildNode(cameraNode)
@@ -171,26 +194,6 @@ class ProteinViewSceneController : UIViewController {
 
         sceneView.allowsCameraControl = true
         sceneView.showsStatistics = true
-        sceneView.autoenablesDefaultLighting = true
-    }
-
-    func lightNode() -> SCNNode {
-        let lightNode = SCNNode()
-
-        let ambientLightNode = SCNNode()
-        ambientLightNode.light = SCNLight()
-        ambientLightNode.light?.type = .ambient
-        ambientLightNode.light?.color = UIColor(white: 0.1, alpha: 1.0)
-        lightNode.addChildNode(ambientLightNode)
-
-        let omniLightNode = SCNNode()
-        omniLightNode.light = SCNLight()
-        omniLightNode.light?.type = .omni
-        omniLightNode.light?.color = UIColor(white: 0.75, alpha: 1.0)
-        omniLightNode.position = SCNVector3Make(0, 50, 50)
-        lightNode.addChildNode(omniLightNode)
-
-        return lightNode
     }
 
     @IBAction func sceneTapAction(_ sender: UITapGestureRecognizer) {
@@ -201,24 +204,26 @@ class ProteinViewSceneController : UIViewController {
                 let atomName = tappedNode.name {
                 print("Tapped on \(atomName)")
 
-                let circlePosition = CGPoint(x: location.x, y: sceneView.frame.maxY - (location.y - 10.0))
-//                let path = CGMutablePath()
-//                path.move(to: location)
-//                path.addLine(to: circlePosition)
+                circle.removeAllActions()
 
-                self.circle.alpha = 0.0
-                self.circle.xScale = 0.0
-                self.circle.yScale = 0.0
-                self.circle.position = location
-                NSLog("go to animation")
-                UIView.animate(withDuration: 1.0, delay: 1.0, options: [], animations: {
-                    self.circle.alpha = 1.0
-                    self.circle.xScale = 1.0
-                    self.circle.yScale = 1.0
-                    self.circle.position = circlePosition
-                }) { (finished) in
-                    NSLog("finished")
-                }
+                atomLabel.text = atomName
+                circle.fillColor = UIColor.CPK(atomType: atomName).mid(color: .white)
+
+                let initialLocation = spriteScene.convertPoint(fromView: location)
+                circle.position = initialLocation
+                circle.xScale = 0.0
+                circle.yScale = 0.0
+                circle.isHidden = false
+                let newCirclePosition = CGPoint(x: initialLocation.x, y: initialLocation.y + 30)
+
+                let moveAction = SKAction.move(to: newCirclePosition, duration: 1.0)
+                let fadeInAction = SKAction.fadeIn(withDuration: 0.25)
+                let fadeOutAction = SKAction.fadeOut(withDuration: 0.25)
+                let scaleAction = SKAction.scale(to: 1.0, duration: 0.5)
+                let popGroup = SKAction.group([moveAction, fadeInAction, scaleAction])
+                let animationSequence = SKAction.sequence([popGroup, fadeOutAction])
+
+                circle.run(animationSequence)
             }
         }
     }
