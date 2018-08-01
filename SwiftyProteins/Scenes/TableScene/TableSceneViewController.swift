@@ -43,41 +43,39 @@ class TableSceneViewController: UIViewController {
 
 // MARK: - TableView delegate functions
 extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
-	
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		
-		return model.proteinsList.count
-	}
-	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
-		let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
-		cell.proteinNameLabel.text = model.proteinsList[indexPath.row]
-		cell.activityIndicator.isHidden = true
-		return cell
-	}
-	
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		
-		let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
-		cell.activityIndicator.isHidden = false
-		cell.activityIndicator.startAnimating()
-		sleep(1)
-		let proteinName = model.proteinsList[indexPath.row]
-		ApiManager.shared.getModelFromAPI(proteinName) { [weak self] (receivedData) in
-			if let data = receivedData {
-				self?.model.parseReceivedData(data)
-				self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
-			}
-		}
-	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let viewController = segue.destination as? ProteinViewSceneController {
-			viewController.model.protein = model.selectedProtein
-		}
-	}
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
+        return model.proteinsList.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
+        cell.proteinNameLabel.text = model.proteinsList[indexPath.row]
+        cell.activityIndicator.isHidden = true
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
+        cell.activityIndicator.isHidden = false
+        cell.activityIndicator.startAnimating()
+        sleep(1)
+        let proteinName = model.proteinsList[indexPath.row]
+        ApiManager.shared.getModelFromAPI(proteinName) { [weak self] (receivedData) in
+            if let data = receivedData {
+                self?.model.parseReceivedData(data)
+                self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
+            }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? ProteinViewSceneController {
+            viewController.model.proteins = model.selectedProtein
+        }
+    }
 }
 
 // MARK: - SearchBar delegate functions
