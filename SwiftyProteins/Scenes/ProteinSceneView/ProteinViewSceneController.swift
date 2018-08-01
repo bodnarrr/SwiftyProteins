@@ -143,7 +143,7 @@ class ProteinViewSceneController : UIViewController {
         let metTexture = UIImage(named: "metal_met.jpg")
 
         let defaultMaterial = SCNMaterial()
-        defaultMaterial.lightingModel = .physicallyBased
+        defaultMaterial.lightingModel = .blinn
         defaultMaterial.normal.contents = nrmTexture
         defaultMaterial.roughness.contents = rghTexture
         defaultMaterial.metalness.contents = metTexture
@@ -202,7 +202,6 @@ class ProteinViewSceneController : UIViewController {
             let hits = sceneView.hitTest(location, options: [.rootNode : atomsNode])
             if let tappedNode = hits.first?.node,
                 let atomName = tappedNode.name {
-                print("Tapped on \(atomName)")
 
                 circle.removeAllActions()
 

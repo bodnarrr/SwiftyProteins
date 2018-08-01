@@ -13,8 +13,8 @@ class TableSceneViewController: UIViewController {
     let model = TableSceneVewModel()
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
-
+	@IBOutlet weak var searchBar: UISearchBar!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
@@ -38,6 +38,7 @@ class TableSceneViewController: UIViewController {
             assert(true, "File Not Found. WTF?")
         }
     }
+	
 }
 
 // MARK: - TableView delegate functions
@@ -52,15 +53,22 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
 		cell.proteinNameLabel.text = model.proteinsList[indexPath.row]
+		cell.activityIndicator.isHidden = true
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		
+		let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
+		cell.activityIndicator.isHidden = false
+		cell.activityIndicator.startAnimating()
+		sleep(1)
 		let proteinName = model.proteinsList[indexPath.row]
 		ApiManager.shared.getModelFromAPI(proteinName) { [weak self] (receivedData) in
-			self?.model.parseReceivedData(receivedData)
-			self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
+			if let data = receivedData {
+				self?.model.parseReceivedData(data)
+				self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
+			}
 		}
 	}
 	
