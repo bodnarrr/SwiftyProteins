@@ -17,6 +17,7 @@ enum ProteinElement {
 class TableSceneVewModel {
 
     var proteinsList: [String] = []
+	var filteredProteinList: [String] = []
     var selectedProtein: [ProteinElement] = []
 
     func parseReceivedData(_ data: String) {
@@ -82,4 +83,14 @@ class TableSceneVewModel {
         }
         return resultingArray
     }
+	
+	func copyAllToFiltered() {
+		filteredProteinList = proteinsList
+	}
+	
+	func filterProteins(_ searchText: String) {
+		filteredProteinList = proteinsList.filter { protein -> Bool in
+			protein.lowercased().contains(searchText.lowercased())
+		}
+	}
 }

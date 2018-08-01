@@ -21,15 +21,9 @@
 		0DDA0290210CAB350087C42F /* ProteinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA028F210CAB350087C42F /* ProteinCell.swift */; };
 		0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0292210CB8D60087C42F /* ApiManager.swift */; };
 		0DDA0295210CBBBC0087C42F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0294210CBBBC0087C42F /* Podfile */; };
-		1343C8C32111C0AE00E6830F /* sunnyBlurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 1343C8C22111C0AE00E6830F /* sunnyBlurred.png */; };
-		13868AC5210F3E13004C02D5 /* metal_disp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC1210F3E13004C02D5 /* metal_disp.jpg */; };
-		13868AC6210F3E13004C02D5 /* metal_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC2210F3E13004C02D5 /* metal_nrm.jpg */; };
-		13868AC7210F3E13004C02D5 /* metal_met.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC3210F3E13004C02D5 /* metal_met.jpg */; };
-		13868AC8210F3E13004C02D5 /* metal_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC4210F3E13004C02D5 /* metal_rgh.jpg */; };
 		13ECD0D8210E0E6D00A1CA7B /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ECD0D7210E0E6D00A1CA7B /* SCNVector3Extensions.swift */; };
 		3B8632D0210F6DFC002D4001 /* StartingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8632CF210F6DFC002D4001 /* StartingNavigationViewController.swift */; };
 		84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */; };
-		84924B97210E46A800F8852D /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 84924B96210E46A800F8852D /* sunny.png */; };
 		90E414E2E28C1714C7367973 /* Pods_SwiftyProteins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */; };
 /* End PBXBuildFile section */
 
@@ -260,13 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1343C8C32111C0AE00E6830F /* sunnyBlurred.png in Resources */,
-				13868AC7210F3E13004C02D5 /* metal_met.jpg in Resources */,
-				13868AC5210F3E13004C02D5 /* metal_disp.jpg in Resources */,
-				84924B97210E46A800F8852D /* sunny.png in Resources */,
-				13868AC8210F3E13004C02D5 /* metal_rgh.jpg in Resources */,
 				0DDA0295210CBBBC0087C42F /* Podfile in Resources */,
-				13868AC6210F3E13004C02D5 /* metal_nrm.jpg in Resources */,
 				0DDA027D210CA23F0087C42F /* LaunchScreen.storyboard in Resources */,
 				0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */,
 				0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */,
