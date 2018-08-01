@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SceneKit
 
 extension SCNVector3 {
     static func lineEulerAngles(vector: SCNVector3) -> SCNVector3 {

@@ -34,6 +34,7 @@
 		843535592112564000C118AD /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843535582112564000C118AD /* UIColor+HexString.swift */; };
 		8435355B2112567500C118AD /* UIColor+MidColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435355A2112567500C118AD /* UIColor+MidColor.swift */; };
 		8435355D2112569B00C118AD /* SCNNode+LineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435355C2112569B00C118AD /* SCNNode+LineNode.swift */; };
+		8435355F2112570700C118AD /* ProteinARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435355E2112570700C118AD /* ProteinARViewController.swift */; };
 		84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */; };
 		84924B97210E46A800F8852D /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 84924B96210E46A800F8852D /* sunny.png */; };
 		90E414E2E28C1714C7367973 /* Pods_SwiftyProteins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */; };
@@ -70,6 +71,7 @@
 		843535582112564000C118AD /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
 		8435355A2112567500C118AD /* UIColor+MidColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+MidColor.swift"; sourceTree = "<group>"; };
 		8435355C2112569B00C118AD /* SCNNode+LineNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+LineNode.swift"; sourceTree = "<group>"; };
+		8435355E2112570700C118AD /* ProteinARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinARViewController.swift; sourceTree = "<group>"; };
 		84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProteinViewSceneController.swift; sourceTree = "<group>"; };
 		84924B96210E46A800F8852D /* sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunny.png; sourceTree = "<group>"; };
 		98524E1C12FAFA240DC2EF5A /* Pods-SwiftyProteins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyProteins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyProteins/Pods-SwiftyProteins.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */,
 				0D2BF1BA210DE5490023F98D /* ProteinViewSceneModel.swift */,
 				843535522112532A00C118AD /* AtomTooltip.swift */,
+				8435355E2112570700C118AD /* ProteinARViewController.swift */,
 			);
 			path = ProteinSceneView;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				843535592112564000C118AD /* UIColor+HexString.swift in Sources */,
 				84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */,
 				8435355D2112569B00C118AD /* SCNNode+LineNode.swift in Sources */,
+				8435355F2112570700C118AD /* ProteinARViewController.swift in Sources */,
 				0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */,
 				84353555211255DE00C118AD /* SCNVector3+LineEulerAngles.swift in Sources */,
 				843535572112561200C118AD /* UIColor+CPK.swift in Sources */,

@@ -12,6 +12,7 @@ import SceneKit
 class ProteinViewSceneModel {
 
     var proteins: [ProteinElement] = []
+    let proteinNode = SCNNode()
     let atomsNode = SCNNode()
 
     lazy var scene: SCNScene = {
@@ -28,7 +29,6 @@ class ProteinViewSceneModel {
 
         let linkColor = UIColor(hexString: "c8c8c8")
         let atomRadius: CGFloat = 1.5
-        let proteinNode = SCNNode()
         for proteinElement in self.proteins {
             switch proteinElement {
             case .atom( _, let type, let coordX, let coordY, let coordZ):
@@ -54,13 +54,13 @@ class ProteinViewSceneModel {
                             linkMaterial.diffuse.contents = linkColor
                             linkNode.geometry?.materials = [linkMaterial]
                             linkNode.geometry?.firstMaterial = linkMaterial
-                            proteinNode.addChildNode(linkNode)
+                            self.proteinNode.addChildNode(linkNode)
                         }
                     }
                 }
             }
         }
-        proteinNode.addChildNode(atomsNode)
+        self.proteinNode.addChildNode(atomsNode)
         scene.rootNode.addChildNode(proteinNode)
 
         return scene

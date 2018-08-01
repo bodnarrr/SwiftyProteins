@@ -85,11 +85,51 @@
                         <outlet property="searchBar" destination="KaR-k0-2LC" id="WSI-pt-HZG"/>
                         <outlet property="tableView" destination="MXN-TR-2nN" id="Geb-Xb-Af7"/>
                         <segue destination="i6v-P7-nng" kind="show" identifier="segueToProteinView" id="en6-cx-y8z"/>
+                        <segue destination="WRY-aE-Vxj" kind="show" identifier="segueToProteinARView" id="eO0-k6-MvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2414" y="90"/>
+        </scene>
+        <!--ProteinAR View Controller-->
+        <scene sceneID="ICH-f0-ROo">
+            <objects>
+                <viewController id="WRY-aE-Vxj" customClass="ProteinARViewController" customModule="SwiftyProteins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Om4-rd-key">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-2W-ZDX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="WRY-aE-Vxj" id="9eY-ry-Rba"/>
+                                    <outletCollection property="gestureRecognizers" destination="0zQ-Ia-0ey" appends="YES" id="h2j-Sa-CWT"/>
+                                </connections>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0GM-gf-PKK" firstAttribute="bottom" secondItem="Sjn-2W-ZDX" secondAttribute="bottom" id="bX6-F0-XE6"/>
+                            <constraint firstItem="Sjn-2W-ZDX" firstAttribute="leading" secondItem="0GM-gf-PKK" secondAttribute="leading" id="iC8-Is-fj9"/>
+                            <constraint firstItem="Sjn-2W-ZDX" firstAttribute="top" secondItem="0GM-gf-PKK" secondAttribute="top" id="t5h-PU-9JW"/>
+                            <constraint firstItem="0GM-gf-PKK" firstAttribute="trailing" secondItem="Sjn-2W-ZDX" secondAttribute="trailing" id="zDR-Pk-zIz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0GM-gf-PKK"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="Sjn-2W-ZDX" id="itX-4g-9bs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7p-CC-7HM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0zQ-Ia-0ey">
+                    <connections>
+                        <action selector="tapAction:" destination="WRY-aE-Vxj" id="7zC-vx-YNZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3314" y="455"/>
         </scene>
         <!--Protein View Scene Controller-->
         <scene sceneID="p7x-nX-bRN">
@@ -128,7 +168,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3310" y="90"/>
+            <point key="canvasLocation" x="3313" y="-265"/>
         </scene>
         <!--Starting Navigation View Controller-->
         <scene sceneID="8dT-Ol-tvc">

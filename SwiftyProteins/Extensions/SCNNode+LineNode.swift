@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SceneKit
 
 extension SCNNode {
     static func lineNode(from: SCNVector3, to: SCNVector3, radius: CGFloat = 0.25) -> SCNNode {

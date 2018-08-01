@@ -21,6 +21,7 @@ class ProteinViewSceneController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        atomTooltip = AtomTooltip(size: sceneView.frame.size)
         sceneView.scene = model.scene
         sceneView.overlaySKScene = atomTooltip?.spriteScene
 

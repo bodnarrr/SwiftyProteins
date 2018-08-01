@@ -66,13 +66,16 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
         ApiManager.shared.getModelFromAPI(proteinName) { [weak self] (receivedData) in
             if let data = receivedData {
                 self?.model.parseReceivedData(data)
-                self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
+//                self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
+                self?.performSegue(withIdentifier: "segueToProteinARView", sender: self)
             }
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? ProteinViewSceneController {
+            viewController.model.proteins = model.selectedProtein
+        } else if let viewController = segue.destination as? ProteinARViewController {
             viewController.model.proteins = model.selectedProtein
         }
     }
