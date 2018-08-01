@@ -64,7 +64,6 @@ class TableSceneVewModel {
                 let centeredAtomPosition = GLKVector3Make(atom.coordX - proteinCenter.x, atom.coordY - proteinCenter.y, atom.coordZ - proteinCenter.z)
                 let normalizedAtomPosition = GLKVector3DivideScalar(centeredAtomPosition, maxProteinHalfDimension)
                 let scaledAtomPosition = GLKVector3MultiplyScalar(normalizedAtomPosition, 25.0)
-                print("\(scaledAtomPosition.x), \(scaledAtomPosition.y), \(scaledAtomPosition.z), ")
                 selectedProtein[index] = ProteinElement.atom(number: atom.number, type: atom.type,
                                                              coordX: scaledAtomPosition.x, coordY: scaledAtomPosition.y, coordZ: scaledAtomPosition.z)
             } else {
