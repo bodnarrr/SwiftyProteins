@@ -21,6 +21,7 @@
 		0DDA0290210CAB350087C42F /* ProteinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA028F210CAB350087C42F /* ProteinCell.swift */; };
 		0DDA0293210CB8D60087C42F /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0292210CB8D60087C42F /* ApiManager.swift */; };
 		0DDA0295210CBBBC0087C42F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0294210CBBBC0087C42F /* Podfile */; };
+		1343C8C32111C0AE00E6830F /* sunnyBlurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 1343C8C22111C0AE00E6830F /* sunnyBlurred.png */; };
 		13868AC5210F3E13004C02D5 /* metal_disp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC1210F3E13004C02D5 /* metal_disp.jpg */; };
 		13868AC6210F3E13004C02D5 /* metal_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC2210F3E13004C02D5 /* metal_nrm.jpg */; };
 		13868AC7210F3E13004C02D5 /* metal_met.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC3210F3E13004C02D5 /* metal_met.jpg */; };
@@ -49,6 +50,7 @@
 		0DDA028F210CAB350087C42F /* ProteinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinCell.swift; sourceTree = "<group>"; };
 		0DDA0292210CB8D60087C42F /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		0DDA0294210CBBBC0087C42F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		1343C8C22111C0AE00E6830F /* sunnyBlurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunnyBlurred.png; sourceTree = "<group>"; };
 		13868AC1210F3E13004C02D5 /* metal_disp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal_disp.jpg; sourceTree = "<group>"; };
 		13868AC2210F3E13004C02D5 /* metal_nrm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal_nrm.jpg; sourceTree = "<group>"; };
 		13868AC3210F3E13004C02D5 /* metal_met.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal_met.jpg; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		0DDA028C210CA4B00087C42F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1343C8C22111C0AE00E6830F /* sunnyBlurred.png */,
 				13868AC1210F3E13004C02D5 /* metal_disp.jpg */,
 				13868AC3210F3E13004C02D5 /* metal_met.jpg */,
 				13868AC2210F3E13004C02D5 /* metal_nrm.jpg */,
@@ -257,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1343C8C32111C0AE00E6830F /* sunnyBlurred.png in Resources */,
 				13868AC7210F3E13004C02D5 /* metal_met.jpg in Resources */,
 				13868AC5210F3E13004C02D5 /* metal_disp.jpg in Resources */,
 				84924B97210E46A800F8852D /* sunny.png in Resources */,
