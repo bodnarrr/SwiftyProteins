@@ -105,16 +105,8 @@
 			children = (
 				84924B91210CFB9600F8852D /* ProteinSceneView */,
 				0DDA0286210CA3DF0087C42F /* TableScene */,
-				0DDA0285210CA3CE0087C42F /* LoginScene */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		0DDA0285210CA3CE0087C42F /* LoginScene */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LoginScene;
 			sourceTree = "<group>";
 		};
 		0DDA0286210CA3DF0087C42F /* TableScene */ = {
