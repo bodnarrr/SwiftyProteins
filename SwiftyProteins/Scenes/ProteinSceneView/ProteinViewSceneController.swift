@@ -143,7 +143,7 @@ class ProteinViewSceneController : UIViewController {
         let metTexture = UIImage(named: "metal_met.jpg")
 
         let defaultMaterial = SCNMaterial()
-        defaultMaterial.lightingModel = .blinn
+        defaultMaterial.lightingModel = .physicallyBased
         defaultMaterial.normal.contents = nrmTexture
         defaultMaterial.roughness.contents = rghTexture
         defaultMaterial.metalness.contents = metTexture
