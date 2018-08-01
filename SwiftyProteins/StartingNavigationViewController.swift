@@ -10,7 +10,8 @@ import UIKit
 
 class StartingNavigationViewController: UINavigationController {
 
-    override func viewDidLoad() {
+
+	override func viewDidLoad() {
         super.viewDidLoad()
     }
 	

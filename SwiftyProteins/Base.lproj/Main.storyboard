@@ -14,7 +14,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="TableSceneViewController" id="BYZ-38-t0r" customClass="TableSceneViewController" customModule="SwiftyProteins" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="I">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -37,22 +37,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-Fd-Ytb">
-                                                    <rect key="frame" x="10" y="28" width="365" height="23"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="23" id="k49-oo-wcG"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="10" y="30" width="305" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t4L-XI-Rhu">
+                                                    <rect key="frame" x="335" y="30" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Kl7-AD-ZRc"/>
+                                                        <constraint firstAttribute="width" constant="20" id="f6x-Et-nlZ"/>
+                                                    </constraints>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cdn-Fd-Ytb" firstAttribute="leading" secondItem="k5p-Xw-w2o" secondAttribute="leading" constant="10" id="Ag0-6T-Cce"/>
-                                                <constraint firstAttribute="trailing" secondItem="cdn-Fd-Ytb" secondAttribute="trailing" id="KNJ-rM-DBU"/>
-                                                <constraint firstItem="cdn-Fd-Ytb" firstAttribute="centerY" secondItem="k5p-Xw-w2o" secondAttribute="centerY" id="cC0-3Y-jPg"/>
+                                                <constraint firstItem="cdn-Fd-Ytb" firstAttribute="top" secondItem="k5p-Xw-w2o" secondAttribute="top" constant="30" id="ASt-Bj-8dH"/>
+                                                <constraint firstItem="t4L-XI-Rhu" firstAttribute="centerY" secondItem="k5p-Xw-w2o" secondAttribute="centerY" id="FcK-Fw-jip"/>
+                                                <constraint firstItem="cdn-Fd-Ytb" firstAttribute="leading" secondItem="k5p-Xw-w2o" secondAttribute="leading" constant="10" id="Tlh-E5-XdY"/>
+                                                <constraint firstItem="cdn-Fd-Ytb" firstAttribute="centerY" secondItem="k5p-Xw-w2o" secondAttribute="centerY" id="avg-dx-ePe"/>
+                                                <constraint firstAttribute="bottom" secondItem="cdn-Fd-Ytb" secondAttribute="bottom" constant="30" id="dLS-Bd-ZIz"/>
+                                                <constraint firstItem="t4L-XI-Rhu" firstAttribute="leading" secondItem="cdn-Fd-Ytb" secondAttribute="trailing" constant="20" id="jpy-RA-ycW"/>
+                                                <constraint firstAttribute="trailing" secondItem="t4L-XI-Rhu" secondAttribute="trailing" constant="20" id="qBe-Rp-BGg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="t4L-XI-Rhu" id="LMp-vM-wRb"/>
                                             <outlet property="proteinNameLabel" destination="cdn-Fd-Ytb" id="cdH-vX-Grp"/>
                                         </connections>
                                     </tableViewCell>
@@ -73,7 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SXu-im-Gvx"/>
                     <connections>
-                        <outlet property="searchBar" destination="KaR-k0-2LC" id="2Cl-Yq-G0L"/>
+                        <outlet property="searchBar" destination="KaR-k0-2LC" id="WSI-pt-HZG"/>
                         <outlet property="tableView" destination="MXN-TR-2nN" id="Geb-Xb-Af7"/>
                         <segue destination="i6v-P7-nng" kind="show" identifier="segueToProteinView" id="en6-cx-y8z"/>
                     </connections>
