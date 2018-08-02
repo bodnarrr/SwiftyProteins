@@ -26,7 +26,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MXN-TR-2nN">
-                                <rect key="frame" x="0.0" y="120" width="414" height="572"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProteinCell" rowHeight="80" id="Fvn-RM-YZe" customClass="ProteinCell" customModule="SwiftyProteins" customModuleProvider="target">
@@ -67,29 +67,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oz-uW-RiJ">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9I-DT-who">
+                                <rect key="frame" x="0.0" y="687" width="414" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="0dn-ep-nSO"/>
+                                </constraints>
                                 <items>
-                                    <barButtonItem title="AR" id="pJM-nf-zlx"/>
-                                    <barButtonItem style="plain" id="W0O-r6-cFO">
-                                        <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="VGJ-hF-faK">
-                                            <rect key="frame" x="53" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </switch>
-                                    </barButtonItem>
+                                    <tabBarItem title="SceneKit" image="scenekit-icon-resized" id="fzc-WK-Cah"/>
+                                    <tabBarItem title="ARKit" image="arkit-resized" id="pIq-je-uJq"/>
                                 </items>
-                            </toolbar>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MXN-TR-2nN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0uI-S2-zcw"/>
                             <constraint firstItem="KaR-k0-2LC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2eB-A5-erY"/>
-                            <constraint firstItem="4oz-uW-RiJ" firstAttribute="top" secondItem="MXN-TR-2nN" secondAttribute="bottom" id="74S-RW-xrf"/>
+                            <constraint firstItem="v9I-DT-who" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3ho-dQ-UNz"/>
+                            <constraint firstItem="v9I-DT-who" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7VP-c5-BEc"/>
                             <constraint firstItem="MXN-TR-2nN" firstAttribute="top" secondItem="KaR-k0-2LC" secondAttribute="bottom" id="8bk-ZJ-WiN"/>
-                            <constraint firstItem="4oz-uW-RiJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EFK-8z-jIs"/>
-                            <constraint firstItem="4oz-uW-RiJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EPO-9K-Iou"/>
+                            <constraint firstItem="v9I-DT-who" firstAttribute="top" secondItem="MXN-TR-2nN" secondAttribute="bottom" id="JBq-Vu-Mx5"/>
                             <constraint firstItem="KaR-k0-2LC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yk6-FM-xOA"/>
-                            <constraint firstItem="4oz-uW-RiJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eBy-fY-urS"/>
+                            <constraint firstItem="v9I-DT-who" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="tZH-bA-VGD"/>
                             <constraint firstItem="MXN-TR-2nN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vdQ-Ez-LPO"/>
                             <constraint firstItem="KaR-k0-2LC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xur-gs-OvI"/>
                         </constraints>
@@ -97,8 +96,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="SXu-im-Gvx"/>
                     <connections>
-                        <outlet property="arModeSwitch" destination="VGJ-hF-faK" id="sKk-k3-PtQ"/>
                         <outlet property="searchBar" destination="KaR-k0-2LC" id="WSI-pt-HZG"/>
+                        <outlet property="tabBar" destination="v9I-DT-who" id="12r-9b-3F1"/>
                         <outlet property="tableView" destination="MXN-TR-2nN" id="Geb-Xb-Af7"/>
                         <segue destination="i6v-P7-nng" kind="show" identifier="segueToProteinView" id="en6-cx-y8z"/>
                         <segue destination="WRY-aE-Vxj" kind="show" identifier="segueToProteinARView" id="eO0-k6-MvQ"/>
@@ -106,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2413.5999999999999" y="89.505247376311857"/>
+            <point key="canvasLocation" x="2413.04347826087" y="88.858695652173921"/>
         </scene>
         <!--ProteinAR View Controller-->
         <scene sceneID="ICH-f0-ROo">
@@ -304,6 +303,8 @@ TouchID</string>
         </scene>
     </scenes>
     <resources>
+        <image name="arkit-resized" width="16" height="16"/>
+        <image name="scenekit-icon-resized" width="16" height="16"/>
         <image name="touch_id_icon" width="250" height="250"/>
     </resources>
 </document>

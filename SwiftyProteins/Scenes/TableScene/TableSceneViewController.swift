@@ -13,8 +13,8 @@ class TableSceneViewController: UIViewController {
     let model = TableSceneVewModel()
     var proteinViewControllerModel: ProteinViewSceneModel?
 
-    @IBOutlet weak var arModeSwitch: UISwitch!
-    @IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var tabBar: UITabBar!
+	@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
     override func viewDidLoad() {
@@ -22,6 +22,9 @@ class TableSceneViewController: UIViewController {
         setDelegates()
         getProteinsList()
         model.copyAllToFiltered()
+		if let items = tabBar.items {
+			tabBar.selectedItem = items[0]
+		}
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -81,11 +84,12 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
             if let data = receivedData {
                 DispatchQueue.global(qos: .background).async {
                     self?.proteinViewControllerModel = ProteinViewSceneModel(data: data)
-                    DispatchQueue.main.async {
-                        if let arOn = self?.arModeSwitch.isOn, arOn == true {
-                            self?.performSegue(withIdentifier: "segueToProteinARView", sender: self)
+                    DispatchQueue.main.async { [weak self] in
+						guard let items = self?.tabBar.items else { return }
+						if self?.tabBar.selectedItem == items[0] {
+							self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
                         } else {
-                            self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
+                            self?.performSegue(withIdentifier: "segueToProteinARView", sender: self)
                         }
                     }
                 }
