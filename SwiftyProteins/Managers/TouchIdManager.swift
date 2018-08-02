@@ -27,16 +27,29 @@ class TouchIdManager {
 		if ableToUseTouchId {
 			context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Logging in with Touch ID") { [weak self] (success, evaluateError) in
 				if success {
-					DispatchQueue.main.async {
-						if (self?.authorized)! {
-							viewController.dismiss(animated: true, completion: nil)
-						} else {
-							self?.authorized = true
-							viewController.performSegue(withIdentifier: "segueToTableScene", sender: self)
-						}
+					if (self?.authorized)! {
+						viewController.dismiss(animated: true, completion: nil)
+					} else {
+						self?.authorized = true
+						viewController.performSegue(withIdentifier: "segueToTableScene", sender: self)
+					}
+				} else {
+					print(evaluateError?.localizedDescription)
+					if evaluateError?.localizedDescription == "Fallback authentication mechanism selected." {
+						context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Enter your password", reply: { (success, error) in
+							if success {
+								if (self?.authorized)! {
+									viewController.dismiss(animated: true, completion: nil)
+								} else {
+									self?.authorized = true
+									viewController.performSegue(withIdentifier: "segueToTableScene", sender: self)
+								}
+							}
+						})
 					}
 				}
 			}
+			
 		} else {
 			viewController.showUnsafeModeAlert()
 		}

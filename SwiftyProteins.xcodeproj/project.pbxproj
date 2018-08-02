@@ -23,15 +23,15 @@
 		0DDA0295210CBBBC0087C42F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0294210CBBBC0087C42F /* Podfile */; };
 		13184D532113216F008D41D5 /* ProteinMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13184D522113216F008D41D5 /* ProteinMaterial.swift */; };
 		13ECD0D8210E0E6D00A1CA7B /* SCNVector3Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ECD0D7210E0E6D00A1CA7B /* SCNVector3Extensions.swift */; };
-		3B4DEE962113566F00BB556E /* Plastic03_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4C21131375008D41D5 /* Plastic03_nrm.jpg */; };
-		3B4DEE972113566F00BB556E /* Plastic03_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4A21131375008D41D5 /* Plastic03_rgh.jpg */; };
-		3B4DEE982113566F00BB556E /* Leather05_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4821130DA6008D41D5 /* Leather05_nrm.jpg */; };
-		3B4DEE992113566F00BB556E /* Leather05_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4621130DA0008D41D5 /* Leather05_rgh.jpg */; };
-		3B4DEE9A2113566F00BB556E /* sunnyBlurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 1343C8C22111C0AE00E6830F /* sunnyBlurred.png */; };
-		3B4DEE9B2113566F00BB556E /* metal_met.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC3210F3E13004C02D5 /* metal_met.jpg */; };
-		3B4DEE9C2113566F00BB556E /* metal_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC2210F3E13004C02D5 /* metal_nrm.jpg */; };
-		3B4DEE9D2113566F00BB556E /* metal_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC4210F3E13004C02D5 /* metal_rgh.jpg */; };
-		3B4DEE9E2113566F00BB556E /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 84924B96210E46A800F8852D /* sunny.png */; };
+		3B4DEE9F2113583F00BB556E /* Plastic03_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4C21131375008D41D5 /* Plastic03_nrm.jpg */; };
+		3B4DEEA02113583F00BB556E /* Plastic03_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4A21131375008D41D5 /* Plastic03_rgh.jpg */; };
+		3B4DEEA12113583F00BB556E /* Leather05_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4821130DA6008D41D5 /* Leather05_nrm.jpg */; };
+		3B4DEEA22113583F00BB556E /* Leather05_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4621130DA0008D41D5 /* Leather05_rgh.jpg */; };
+		3B4DEEA32113583F00BB556E /* sunnyBlurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 1343C8C22111C0AE00E6830F /* sunnyBlurred.png */; };
+		3B4DEEA42113583F00BB556E /* metal_met.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC3210F3E13004C02D5 /* metal_met.jpg */; };
+		3B4DEEA52113583F00BB556E /* metal_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC2210F3E13004C02D5 /* metal_nrm.jpg */; };
+		3B4DEEA62113583F00BB556E /* metal_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC4210F3E13004C02D5 /* metal_rgh.jpg */; };
+		3B4DEEA72113583F00BB556E /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 84924B96210E46A800F8852D /* sunny.png */; };
 		3B8632D0210F6DFC002D4001 /* StartingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8632CF210F6DFC002D4001 /* StartingNavigationViewController.swift */; };
 		843535532112532A00C118AD /* AtomTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843535522112532A00C118AD /* AtomTooltip.swift */; };
 		84353555211255DE00C118AD /* SCNVector3+LineEulerAngles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84353554211255DE00C118AD /* SCNVector3+LineEulerAngles.swift */; };
@@ -293,20 +293,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B4DEE9A2113566F00BB556E /* sunnyBlurred.png in Resources */,
-				3B4DEE9D2113566F00BB556E /* metal_rgh.jpg in Resources */,
+				3B4DEEA32113583F00BB556E /* sunnyBlurred.png in Resources */,
+				3B4DEEA62113583F00BB556E /* metal_rgh.jpg in Resources */,
 				0DDA0295210CBBBC0087C42F /* Podfile in Resources */,
 				0DDA027D210CA23F0087C42F /* LaunchScreen.storyboard in Resources */,
-				3B4DEE9C2113566F00BB556E /* metal_nrm.jpg in Resources */,
+				3B4DEEA52113583F00BB556E /* metal_nrm.jpg in Resources */,
 				0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */,
-				3B4DEE992113566F00BB556E /* Leather05_rgh.jpg in Resources */,
-				3B4DEE9E2113566F00BB556E /* sunny.png in Resources */,
+				3B4DEEA22113583F00BB556E /* Leather05_rgh.jpg in Resources */,
+				3B4DEEA72113583F00BB556E /* sunny.png in Resources */,
 				0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */,
 				0DDA028E210CA50A0087C42F /* ligands.txt in Resources */,
-				3B4DEE972113566F00BB556E /* Plastic03_rgh.jpg in Resources */,
-				3B4DEE982113566F00BB556E /* Leather05_nrm.jpg in Resources */,
-				3B4DEE9B2113566F00BB556E /* metal_met.jpg in Resources */,
-				3B4DEE962113566F00BB556E /* Plastic03_nrm.jpg in Resources */,
+				3B4DEEA02113583F00BB556E /* Plastic03_rgh.jpg in Resources */,
+				3B4DEEA12113583F00BB556E /* Leather05_nrm.jpg in Resources */,
+				3B4DEEA42113583F00BB556E /* metal_met.jpg in Resources */,
+				3B4DEE9F2113583F00BB556E /* Plastic03_nrm.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6CXT6RVZG5;
+				DEVELOPMENT_TEAM = 6QQ85WV9R8;
 				INFOPLIST_FILE = SwiftyProteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.unit.SwiftyProteins;
@@ -530,7 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6CXT6RVZG5;
+				DEVELOPMENT_TEAM = 6QQ85WV9R8;
 				INFOPLIST_FILE = SwiftyProteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.unit.SwiftyProteins;
