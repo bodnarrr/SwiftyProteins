@@ -1,1 +1,1 @@
-wget --user=kiev@mettle.com --ask-password -nH --cut-dirs=2 -P SwiftyProteins/TestResources -r ftp://ftp.mettle.com:21/HEORHII/SwiftyResources
+wget --user=kiev@mettle.com --ask-password --no-clobber --no-host-directories --cut-dirs=2 -P SwiftyProteins/Resources -r ftp://ftp.mettle.com:21/HEORHII/SwiftyResources
