@@ -55,6 +55,7 @@ class ProteinMaterial {
         for mat in materials {
             alert.addAction(UIAlertAction(title: mat.name, style: .default, handler: materialActionHandler))
         }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     }
 
     func selectNewMaterial(inViewController: UIViewController) {
