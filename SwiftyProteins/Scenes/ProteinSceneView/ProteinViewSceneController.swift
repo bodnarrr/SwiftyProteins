@@ -33,7 +33,6 @@ class ProteinViewSceneController : UIViewController {
         model.scene.rootNode.addChildNode(cameraNode)
 
         sceneView.allowsCameraControl = true
-        sceneView.showsStatistics = true
     }
 
     @IBAction func sceneTapAction(_ sender: UITapGestureRecognizer) {
@@ -46,6 +45,10 @@ class ProteinViewSceneController : UIViewController {
                 atomTooltip?.runAnimation(locationInView: location, atomName: atomName)
             }
         }
+    }
+
+    @IBAction func materialsAction(_ sender: Any) {
+        model.proteinMaterial.selectNewMaterial(inViewController: self)
     }
 
     func setupCamera() -> SCNNode {

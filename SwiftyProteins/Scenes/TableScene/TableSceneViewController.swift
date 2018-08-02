@@ -12,9 +12,10 @@ class TableSceneViewController: UIViewController {
 
     let model = TableSceneVewModel()
 
+    @IBOutlet weak var arModeSwitch: UISwitch!
     @IBOutlet weak var tableView: UITableView!
-	@IBOutlet weak var searchBar: UISearchBar!
-	
+    @IBOutlet weak var searchBar: UISearchBar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
@@ -66,8 +67,11 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
         ApiManager.shared.getModelFromAPI(proteinName) { [weak self] (receivedData) in
             if let data = receivedData {
                 self?.model.parseReceivedData(data)
-//                self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
-                self?.performSegue(withIdentifier: "segueToProteinARView", sender: self)
+                if let arOn = self?.arModeSwitch.isOn, arOn == true {
+                    self?.performSegue(withIdentifier: "segueToProteinARView", sender: self)
+                } else {
+                    self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
+                }
             }
         }
     }

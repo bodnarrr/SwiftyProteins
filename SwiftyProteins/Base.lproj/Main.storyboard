@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CcX-Se-gTo">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,35 +15,35 @@
             <objects>
                 <viewController storyboardIdentifier="TableSceneViewController" id="BYZ-38-t0r" customClass="TableSceneViewController" customModule="SwiftyProteins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KaR-k0-2LC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="VT8-3R-9GD"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MXN-TR-2nN">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="120" width="414" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProteinCell" rowHeight="80" id="Fvn-RM-YZe" customClass="ProteinCell" customModule="SwiftyProteins" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fvn-RM-YZe" id="k5p-Xw-w2o">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-Fd-Ytb">
-                                                    <rect key="frame" x="10" y="30" width="305" height="19.5"/>
+                                                    <rect key="frame" x="10" y="30" width="344" height="19.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t4L-XI-Rhu">
-                                                    <rect key="frame" x="335" y="30" width="20" height="20"/>
+                                                    <rect key="frame" x="374" y="30" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Kl7-AD-ZRc"/>
                                                         <constraint firstAttribute="width" constant="20" id="f6x-Et-nlZ"/>
@@ -67,14 +67,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oz-uW-RiJ">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="AR" id="pJM-nf-zlx"/>
+                                    <barButtonItem style="plain" id="W0O-r6-cFO">
+                                        <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="VGJ-hF-faK">
+                                            <rect key="frame" x="53" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </switch>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MXN-TR-2nN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0uI-S2-zcw"/>
                             <constraint firstItem="KaR-k0-2LC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2eB-A5-erY"/>
+                            <constraint firstItem="4oz-uW-RiJ" firstAttribute="top" secondItem="MXN-TR-2nN" secondAttribute="bottom" id="74S-RW-xrf"/>
                             <constraint firstItem="MXN-TR-2nN" firstAttribute="top" secondItem="KaR-k0-2LC" secondAttribute="bottom" id="8bk-ZJ-WiN"/>
-                            <constraint firstItem="MXN-TR-2nN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FUw-oO-7jj"/>
+                            <constraint firstItem="4oz-uW-RiJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EFK-8z-jIs"/>
+                            <constraint firstItem="4oz-uW-RiJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EPO-9K-Iou"/>
                             <constraint firstItem="KaR-k0-2LC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yk6-FM-xOA"/>
+                            <constraint firstItem="4oz-uW-RiJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eBy-fY-urS"/>
                             <constraint firstItem="MXN-TR-2nN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vdQ-Ez-LPO"/>
                             <constraint firstItem="KaR-k0-2LC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xur-gs-OvI"/>
                         </constraints>
@@ -82,6 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SXu-im-Gvx"/>
                     <connections>
+                        <outlet property="arModeSwitch" destination="VGJ-hF-faK" id="sKk-k3-PtQ"/>
                         <outlet property="searchBar" destination="KaR-k0-2LC" id="WSI-pt-HZG"/>
                         <outlet property="tableView" destination="MXN-TR-2nN" id="Geb-Xb-Af7"/>
                         <segue destination="i6v-P7-nng" kind="show" identifier="segueToProteinView" id="en6-cx-y8z"/>
@@ -90,29 +106,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="90"/>
+            <point key="canvasLocation" x="2413.5999999999999" y="89.505247376311857"/>
         </scene>
         <!--ProteinAR View Controller-->
         <scene sceneID="ICH-f0-ROo">
             <objects>
                 <viewController id="WRY-aE-Vxj" customClass="ProteinARViewController" customModule="SwiftyProteins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Om4-rd-key">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-2W-ZDX">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="WRY-aE-Vxj" id="9eY-ry-Rba"/>
                                     <outletCollection property="gestureRecognizers" destination="0zQ-Ia-0ey" appends="YES" id="h2j-Sa-CWT"/>
                                 </connections>
                             </arscnView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btN-7q-dHl">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Materials" id="rlM-fd-Woy">
+                                        <connections>
+                                            <action selector="materialsAction:" destination="WRY-aE-Vxj" id="Y9r-TF-VNH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0GM-gf-PKK" firstAttribute="bottom" secondItem="Sjn-2W-ZDX" secondAttribute="bottom" id="bX6-F0-XE6"/>
+                            <constraint firstItem="btN-7q-dHl" firstAttribute="leading" secondItem="0GM-gf-PKK" secondAttribute="leading" id="4Ly-J5-Mrm"/>
+                            <constraint firstItem="btN-7q-dHl" firstAttribute="bottom" secondItem="0GM-gf-PKK" secondAttribute="bottom" id="FQY-Em-LSh"/>
                             <constraint firstItem="Sjn-2W-ZDX" firstAttribute="leading" secondItem="0GM-gf-PKK" secondAttribute="leading" id="iC8-Is-fj9"/>
+                            <constraint firstItem="btN-7q-dHl" firstAttribute="trailing" secondItem="0GM-gf-PKK" secondAttribute="trailing" id="neG-7P-4gF"/>
+                            <constraint firstItem="Sjn-2W-ZDX" firstAttribute="bottom" secondItem="btN-7q-dHl" secondAttribute="top" id="sDN-9p-b8a"/>
                             <constraint firstItem="Sjn-2W-ZDX" firstAttribute="top" secondItem="0GM-gf-PKK" secondAttribute="top" id="t5h-PU-9JW"/>
                             <constraint firstItem="0GM-gf-PKK" firstAttribute="trailing" secondItem="Sjn-2W-ZDX" secondAttribute="trailing" id="zDR-Pk-zIz"/>
                         </constraints>
@@ -129,31 +158,44 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3314" y="455"/>
+            <point key="canvasLocation" x="3312.8000000000002" y="454.72263868065971"/>
         </scene>
         <!--Protein View Scene Controller-->
         <scene sceneID="p7x-nX-bRN">
             <objects>
                 <viewController id="i6v-P7-nng" customClass="ProteinViewSceneController" customModule="SwiftyProteins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GN2-Yl-lpY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QuQ-Oz-j5z">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="i6v-P7-nng" id="C3D-EQ-LQD"/>
                                     <outletCollection property="gestureRecognizers" destination="9be-nl-OOb" appends="YES" id="mdf-Gq-P46"/>
                                 </connections>
                             </sceneKitView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rR0-5X-khI">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Materials" id="7ko-be-0Xj">
+                                        <connections>
+                                            <action selector="materialsAction:" destination="i6v-P7-nng" id="wvM-ox-yvu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QuQ-Oz-j5z" firstAttribute="bottom" secondItem="SZe-fz-S5N" secondAttribute="bottom" id="278-bv-svL"/>
+                            <constraint firstItem="rR0-5X-khI" firstAttribute="top" secondItem="QuQ-Oz-j5z" secondAttribute="bottom" id="81Q-hb-Tm9"/>
+                            <constraint firstItem="rR0-5X-khI" firstAttribute="trailing" secondItem="SZe-fz-S5N" secondAttribute="trailing" id="8uC-8W-Khl"/>
                             <constraint firstItem="QuQ-Oz-j5z" firstAttribute="top" secondItem="SZe-fz-S5N" secondAttribute="top" id="d72-ba-YFt"/>
+                            <constraint firstItem="rR0-5X-khI" firstAttribute="leading" secondItem="SZe-fz-S5N" secondAttribute="leading" id="das-zX-zza"/>
                             <constraint firstItem="QuQ-Oz-j5z" firstAttribute="trailing" secondItem="SZe-fz-S5N" secondAttribute="trailing" id="grf-Ug-Tnz"/>
                             <constraint firstItem="QuQ-Oz-j5z" firstAttribute="leading" secondItem="SZe-fz-S5N" secondAttribute="leading" id="sLA-ZY-SsL"/>
+                            <constraint firstItem="rR0-5X-khI" firstAttribute="bottom" secondItem="SZe-fz-S5N" secondAttribute="bottom" id="w0l-X4-r1N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SZe-fz-S5N"/>
                     </view>
@@ -168,7 +210,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3313" y="-265"/>
+            <point key="canvasLocation" x="3311.594202898551" y="-265.76086956521743"/>
         </scene>
         <!--Starting Navigation View Controller-->
         <scene sceneID="8dT-Ol-tvc">
@@ -176,7 +218,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CcX-Se-gTo" customClass="StartingNavigationViewController" customModule="SwiftyProteins" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eS8-3t-roN">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -193,11 +235,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="WVD-oi-avQ" customClass="LoginViewController" customModule="SwiftyProteins" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="itj-54-ZoZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rz-rN-yq3">
-                                <rect key="frame" x="86" y="52" width="203" height="41"/>
+                                <rect key="frame" x="105.66666666666669" y="52" width="203" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="203" id="0ms-lx-Ofa"/>
                                     <constraint firstAttribute="height" constant="41" id="rTq-Mb-39e"/>
@@ -209,7 +251,7 @@ TouchID</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touch_id_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Gq6-ib-RLc">
-                                <rect key="frame" x="77" y="223.5" width="220" height="220"/>
+                                <rect key="frame" x="97" y="258" width="220" height="220"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="58e-bk-rBb"/>
@@ -248,7 +290,7 @@ TouchID</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3eS-hX-ElT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RYs-R3-uwB">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

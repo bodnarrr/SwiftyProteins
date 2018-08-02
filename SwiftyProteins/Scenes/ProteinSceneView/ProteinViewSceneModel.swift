@@ -9,24 +9,17 @@
 import Foundation
 import SceneKit
 
-class ProteinViewSceneModel {
+class ProteinViewSceneModel: ProteinMaterialObserver {
 
     var proteins: [ProteinElement] = []
+    let proteinMaterial = ProteinMaterial()
     let proteinNode = SCNNode()
     let atomsNode = SCNNode()
 
     lazy var scene: SCNScene = {
         let scene = SCNScene()
-        let nrmTexture = UIImage(named: "metal_nrm.jpg")
-        let rghTexture = UIImage(named: "metal_rgh.jpg")
-        let metTexture = UIImage(named: "metal_met.jpg")
 
-        let defaultMaterial = SCNMaterial()
-        defaultMaterial.lightingModel = .physicallyBased
-        defaultMaterial.normal.contents = nrmTexture
-        defaultMaterial.roughness.contents = rghTexture
-        defaultMaterial.metalness.contents = metTexture
-
+        let defaultMaterial = proteinMaterial.material
         let linkColor = UIColor(hexString: "c8c8c8")
         let atomRadius: CGFloat = 1.5
         for proteinElement in self.proteins {
@@ -65,4 +58,20 @@ class ProteinViewSceneModel {
 
         return scene
     }()
+
+    init() {
+        proteinMaterial.observer = self
+    }
+
+    func materialWasChanged(newMaterial: SCNMaterial) {
+        for node in atomsNode.childNodes {
+            if let atom = node.geometry {
+                let material = newMaterial.copy() as! SCNMaterial
+                if let atomName = node.name {
+                    material.diffuse.contents = UIColor.CPK(atomType: atomName)
+                }
+                atom.firstMaterial = material
+            }
+        }
+    }
 }

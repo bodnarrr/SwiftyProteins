@@ -28,7 +28,6 @@ class ProteinARViewController : UIViewController, ARSCNViewDelegate {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
         sceneView.session.pause()
     }
 
@@ -49,6 +48,10 @@ class ProteinARViewController : UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         guard let lightEstimate = sceneView.session.currentFrame?.lightEstimate else { return }
         sceneView.scene.lightingEnvironment.intensity = lightEstimate.ambientIntensity / 1000.0
+    }
+
+    @IBAction func materialsAction(_ sender: UIBarButtonItem) {
+        model.proteinMaterial.selectNewMaterial(inViewController: self)
     }
 
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
