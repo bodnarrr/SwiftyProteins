@@ -11,7 +11,7 @@ import UIKit
 import ARKit
 
 class ProteinARViewController : UIViewController, ARSCNViewDelegate {
-    let model = ProteinViewSceneModel()
+    var model: ProteinViewSceneModel?
     var atomTooltip: AtomTooltip?
 
     @IBOutlet weak var sceneView: ARSCNView!
@@ -34,15 +34,16 @@ class ProteinARViewController : UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard let scene = model?.scene else {
+            return
+        }
+
         atomTooltip = AtomTooltip(size: sceneView.frame.size)
-        sceneView.scene = model.scene
+        sceneView.scene = scene
         sceneView.overlaySKScene = atomTooltip?.spriteScene
 
-        model.scene.lightingEnvironment.contents = "sunnyBlurred.png"
-        model.scene.lightingEnvironment.intensity = 1.0
-
-        model.proteinNode.position = SCNVector3Make(0.0, 0.0, -2.0)
-        model.proteinNode.scale = SCNVector3Make(0.05, 0.05, 0.05)
+        model?.proteinNode.position = SCNVector3Make(0.0, 0.0, -2.0)
+        model?.proteinNode.scale = SCNVector3Make(0.05, 0.05, 0.05)
     }
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
@@ -51,13 +52,13 @@ class ProteinARViewController : UIViewController, ARSCNViewDelegate {
     }
 
     @IBAction func materialsAction(_ sender: UIBarButtonItem) {
-        model.proteinMaterial.selectNewMaterial(inViewController: self)
+        model?.proteinMaterial.selectNewMaterial(inViewController: self)
     }
 
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             let location = sender.location(in: sceneView)
-            let hits = sceneView.hitTest(location, options: [.rootNode : model.atomsNode])
+            let hits = sceneView.hitTest(location, options: [.rootNode : model?.atomsNode ?? SCNNode()])
             if let tappedNode = hits.first?.node,
                 let atomName = tappedNode.name {
 

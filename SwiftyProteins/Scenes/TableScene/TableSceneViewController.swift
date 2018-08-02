@@ -11,6 +11,7 @@ import UIKit
 class TableSceneViewController: UIViewController {
 
     let model = TableSceneVewModel()
+    var proteinViewControllerModel: ProteinViewSceneModel?
 
     @IBOutlet weak var arModeSwitch: UISwitch!
     @IBOutlet weak var tableView: UITableView!
@@ -58,7 +59,6 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
         cell.activityIndicator.isHidden = false
         cell.activityIndicator.startAnimating()
@@ -66,11 +66,15 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
         let proteinName = model.proteinsList[indexPath.row]
         ApiManager.shared.getModelFromAPI(proteinName) { [weak self] (receivedData) in
             if let data = receivedData {
-                self?.model.parseReceivedData(data)
-                if let arOn = self?.arModeSwitch.isOn, arOn == true {
-                    self?.performSegue(withIdentifier: "segueToProteinARView", sender: self)
-                } else {
-                    self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
+                DispatchQueue.global(qos: .background).async {
+                    self?.proteinViewControllerModel = ProteinViewSceneModel(data: data)
+                    DispatchQueue.main.async {
+                        if let arOn = self?.arModeSwitch.isOn, arOn == true {
+                            self?.performSegue(withIdentifier: "segueToProteinARView", sender: self)
+                        } else {
+                            self?.performSegue(withIdentifier: "segueToProteinView", sender: self)
+                        }
+                    }
                 }
             }
         }
@@ -78,9 +82,9 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? ProteinViewSceneController {
-            viewController.model.proteins = model.selectedProtein
+            viewController.model = proteinViewControllerModel
         } else if let viewController = segue.destination as? ProteinARViewController {
-            viewController.model.proteins = model.selectedProtein
+            viewController.model = proteinViewControllerModel
         }
     }
 }

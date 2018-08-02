@@ -11,7 +11,7 @@ import SceneKit
 
 class ProteinViewSceneController : UIViewController {
 
-    let model = ProteinViewSceneModel()
+    var model: ProteinViewSceneModel?
     var atomTooltip: AtomTooltip?
 
     @IBOutlet weak var sceneView: SCNView!
@@ -22,15 +22,13 @@ class ProteinViewSceneController : UIViewController {
         super.viewDidLoad()
 
         atomTooltip = AtomTooltip(size: sceneView.frame.size)
-        sceneView.scene = model.scene
+        sceneView.scene = model?.scene
         sceneView.overlaySKScene = atomTooltip?.spriteScene
 
-        model.scene.lightingEnvironment.contents = "sunny.png"
-        model.scene.lightingEnvironment.intensity = 1.0
-        model.scene.background.contents = "sunnyBlurred.png"
+        model?.scene.background.contents = "sunnyBlurred.png"
 
         cameraNode = setupCamera()
-        model.scene.rootNode.addChildNode(cameraNode)
+        model?.scene.rootNode.addChildNode(cameraNode)
 
         sceneView.allowsCameraControl = true
     }
@@ -38,7 +36,7 @@ class ProteinViewSceneController : UIViewController {
     @IBAction func sceneTapAction(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             let location = sender.location(in: sceneView)
-            let hits = sceneView.hitTest(location, options: [.rootNode : model.atomsNode])
+            let hits = sceneView.hitTest(location, options: [.rootNode : model?.atomsNode ?? SCNNode()])
             if let tappedNode = hits.first?.node,
                 let atomName = tappedNode.name {
 
@@ -48,7 +46,7 @@ class ProteinViewSceneController : UIViewController {
     }
 
     @IBAction func materialsAction(_ sender: Any) {
-        model.proteinMaterial.selectNewMaterial(inViewController: self)
+        model?.proteinMaterial.selectNewMaterial(inViewController: self)
     }
 
     func setupCamera() -> SCNNode {
