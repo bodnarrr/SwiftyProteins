@@ -27,7 +27,7 @@ class ProteinViewSceneController : UIViewController {
 
         model.scene.lightingEnvironment.contents = "sunny.png"
         model.scene.lightingEnvironment.intensity = 1.0
-        model.scene.background.contents = "sunny.png"
+        model.scene.background.contents = "sunnyBlurred.png"
 
         cameraNode = setupCamera()
         model.scene.rootNode.addChildNode(cameraNode)

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import ARKit
 
-class ProteinARViewController : UIViewController {
+class ProteinARViewController : UIViewController, ARSCNViewDelegate {
     let model = ProteinViewSceneModel()
     var atomTooltip: AtomTooltip?
 
@@ -22,7 +22,8 @@ class ProteinARViewController : UIViewController {
         let config = ARWorldTrackingConfiguration()
         config.isLightEstimationEnabled = true
         sceneView.session.run(config)
-        sceneView.automaticallyUpdatesLighting = true
+        sceneView.delegate = self
+        sceneView.automaticallyUpdatesLighting = false
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -38,8 +39,16 @@ class ProteinARViewController : UIViewController {
         sceneView.scene = model.scene
         sceneView.overlaySKScene = atomTooltip?.spriteScene
 
+        model.scene.lightingEnvironment.contents = "sunnyBlurred.png"
+        model.scene.lightingEnvironment.intensity = 1.0
+
         model.proteinNode.position = SCNVector3Make(0.0, 0.0, -2.0)
         model.proteinNode.scale = SCNVector3Make(0.05, 0.05, 0.05)
+    }
+
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        guard let lightEstimate = sceneView.session.currentFrame?.lightEstimate else { return }
+        sceneView.scene.lightingEnvironment.intensity = lightEstimate.ambientIntensity / 1000.0
     }
 
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
