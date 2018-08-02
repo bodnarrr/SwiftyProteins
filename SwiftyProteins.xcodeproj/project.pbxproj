@@ -24,9 +24,7 @@
 		13184D4721130DA1008D41D5 /* Leather05_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4621130DA0008D41D5 /* Leather05_rgh.jpg */; };
 		13184D4921130DA6008D41D5 /* Leather05_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4821130DA6008D41D5 /* Leather05_nrm.jpg */; };
 		13184D4E21131375008D41D5 /* Plastic03_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4A21131375008D41D5 /* Plastic03_rgh.jpg */; };
-		13184D4F21131375008D41D5 /* Plastic04_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4B21131375008D41D5 /* Plastic04_rgh.jpg */; };
 		13184D5021131375008D41D5 /* Plastic03_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4C21131375008D41D5 /* Plastic03_nrm.jpg */; };
-		13184D5121131375008D41D5 /* Plastic04_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4D21131375008D41D5 /* Plastic04_nrm.jpg */; };
 		13184D532113216F008D41D5 /* ProteinMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13184D522113216F008D41D5 /* ProteinMaterial.swift */; };
 		1343C8C32111C0AE00E6830F /* sunnyBlurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 1343C8C22111C0AE00E6830F /* sunnyBlurred.png */; };
 		13868AC6210F3E13004C02D5 /* metal_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC2210F3E13004C02D5 /* metal_nrm.jpg */; };
@@ -66,9 +64,7 @@
 		13184D4621130DA0008D41D5 /* Leather05_rgh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Leather05_rgh.jpg; sourceTree = "<group>"; };
 		13184D4821130DA6008D41D5 /* Leather05_nrm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Leather05_nrm.jpg; sourceTree = "<group>"; };
 		13184D4A21131375008D41D5 /* Plastic03_rgh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Plastic03_rgh.jpg; sourceTree = "<group>"; };
-		13184D4B21131375008D41D5 /* Plastic04_rgh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Plastic04_rgh.jpg; sourceTree = "<group>"; };
 		13184D4C21131375008D41D5 /* Plastic03_nrm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Plastic03_nrm.jpg; sourceTree = "<group>"; };
-		13184D4D21131375008D41D5 /* Plastic04_nrm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Plastic04_nrm.jpg; sourceTree = "<group>"; };
 		13184D522113216F008D41D5 /* ProteinMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinMaterial.swift; sourceTree = "<group>"; };
 		1343C8C22111C0AE00E6830F /* sunnyBlurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunnyBlurred.png; sourceTree = "<group>"; };
 		13868AC2210F3E13004C02D5 /* metal_nrm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal_nrm.jpg; sourceTree = "<group>"; };
@@ -185,8 +181,6 @@
 			children = (
 				13184D4C21131375008D41D5 /* Plastic03_nrm.jpg */,
 				13184D4A21131375008D41D5 /* Plastic03_rgh.jpg */,
-				13184D4D21131375008D41D5 /* Plastic04_nrm.jpg */,
-				13184D4B21131375008D41D5 /* Plastic04_rgh.jpg */,
 				13184D4821130DA6008D41D5 /* Leather05_nrm.jpg */,
 				13184D4621130DA0008D41D5 /* Leather05_rgh.jpg */,
 				1343C8C22111C0AE00E6830F /* sunnyBlurred.png */,
@@ -299,17 +293,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13184D5121131375008D41D5 /* Plastic04_nrm.jpg in Resources */,
 				1343C8C32111C0AE00E6830F /* sunnyBlurred.png in Resources */,
 				13868AC7210F3E13004C02D5 /* metal_met.jpg in Resources */,
 				84924B97210E46A800F8852D /* sunny.png in Resources */,
 				13868AC8210F3E13004C02D5 /* metal_rgh.jpg in Resources */,
-				0DDA0295210CBBBC0087C42F /* Podfile in Resources */,
 				13184D4921130DA6008D41D5 /* Leather05_nrm.jpg in Resources */,
 				13184D4721130DA1008D41D5 /* Leather05_rgh.jpg in Resources */,
 				13868AC6210F3E13004C02D5 /* metal_nrm.jpg in Resources */,
 				13184D5021131375008D41D5 /* Plastic03_nrm.jpg in Resources */,
-				13184D4F21131375008D41D5 /* Plastic04_rgh.jpg in Resources */,
+				0DDA0295210CBBBC0087C42F /* Podfile in Resources */,
 				0DDA027D210CA23F0087C42F /* LaunchScreen.storyboard in Resources */,
 				0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */,
 				0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */,

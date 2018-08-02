@@ -21,6 +21,17 @@ class TableSceneViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         getProteinsList()
+        model.copyAllToFiltered()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let cells = tableView.visibleCells as! [ProteinCell]
+        for cell in cells {
+            cell.activityIndicator.isHidden = true
+            cell.activityIndicator.stopAnimating()
+            cell.isSelected = false
+        }
     }
 
     private func setDelegates() {
@@ -45,25 +56,27 @@ class TableSceneViewController: UIViewController {
 
 // MARK: - TableView delegate functions
 extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return model.proteinsList.count
+        return model.filteredProteinList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
-        cell.proteinNameLabel.text = model.proteinsList[indexPath.row]
+        cell.proteinNameLabel.text = model.filteredProteinList[indexPath.row]
         cell.activityIndicator.isHidden = true
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProteinCell", for: indexPath) as! ProteinCell
+        let cell = tableView.cellForRow(at: indexPath) as! ProteinCell
         cell.activityIndicator.isHidden = false
-        cell.activityIndicator.startAnimating()
-        sleep(1)
-        let proteinName = model.proteinsList[indexPath.row]
+        DispatchQueue.main.async {
+            cell.activityIndicator.startAnimating()
+        }
+        let proteinName = model.filteredProteinList[indexPath.row]
         ApiManager.shared.getModelFromAPI(proteinName) { [weak self] (receivedData) in
             if let data = receivedData {
                 DispatchQueue.global(qos: .background).async {
@@ -93,6 +106,12 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
 extension TableSceneViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        guard !searchText.isEmpty else {
+            model.copyAllToFiltered()
+            tableView.reloadData()
+            return
+        }
+        model.filterProteins(searchText)
+        tableView.reloadData()
     }
 }

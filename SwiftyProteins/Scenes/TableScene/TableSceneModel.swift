@@ -10,4 +10,15 @@ import Foundation
 
 class TableSceneVewModel {
     var proteinsList: [String] = []
+    var filteredProteinList: [String] = []
+    
+    func copyAllToFiltered() {
+        filteredProteinList = proteinsList
+    }
+    
+    func filterProteins(_ searchText: String) {
+        filteredProteinList = proteinsList.filter { protein -> Bool in
+            protein.lowercased().contains(searchText.lowercased())
+        }
+    }
 }
