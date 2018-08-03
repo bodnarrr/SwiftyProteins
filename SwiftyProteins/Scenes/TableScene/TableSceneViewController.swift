@@ -98,6 +98,10 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+	
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		searchBar.resignFirstResponder()
+	}
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? ProteinViewSceneController {
