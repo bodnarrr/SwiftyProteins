@@ -35,6 +35,7 @@ class TableSceneViewController: UIViewController {
             cell.activityIndicator.stopAnimating()
             cell.isSelected = false
         }
+		tableView.allowsSelection = true
     }
 
     private func setDelegates() {
@@ -74,6 +75,7 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.allowsSelection = false
         let cell = tableView.cellForRow(at: indexPath) as! ProteinCell
         cell.activityIndicator.isHidden = false
         DispatchQueue.main.async {
