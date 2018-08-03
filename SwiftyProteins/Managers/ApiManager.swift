@@ -20,6 +20,10 @@ class ApiManager {
         let apiRootUrl = "https://files.rcsb.org/ligands/view/"
         let url = apiRootUrl + proteinName + "_model.pdb"
         Alamofire.request(url).response { (response) in
+			if response.error != nil {
+				completion(nil)
+				return
+			}
             if let data = response.data {
                 guard let text = String(data: data, encoding: .utf8) else { return }
                 completion(text)

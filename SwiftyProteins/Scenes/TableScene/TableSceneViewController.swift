@@ -25,6 +25,7 @@ class TableSceneViewController: UIViewController {
 		if let items = tabBar.items {
 			tabBar.selectedItem = items[0]
 		}
+		self.title = "Proteins"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -78,9 +79,7 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
 		tableView.allowsSelection = false
         let cell = tableView.cellForRow(at: indexPath) as! ProteinCell
         cell.activityIndicator.isHidden = false
-        DispatchQueue.main.async {
-            cell.activityIndicator.startAnimating()
-        }
+		cell.activityIndicator.startAnimating()
         let proteinName = model.filteredProteinList[indexPath.row]
         ApiManager.shared.getModelFromAPI(proteinName) { [weak self] (receivedData) in
             if let data = receivedData {
@@ -95,7 +94,18 @@ extension TableSceneViewController: UITableViewDelegate, UITableViewDataSource {
                         }
                     }
                 }
-            }
+			} else {
+				let alert = UIAlertController(title: "No internet connection!", message: "Check your connection and try again", preferredStyle: .alert)
+				let alertAction = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+					cell.activityIndicator.isHidden = true
+					cell.activityIndicator.stopAnimating()
+					cell.isSelected = false
+					self?.tableView.allowsSelection = true
+				})
+				alert.addAction(alertAction)
+				self?.present(alert, animated: true)
+				
+			}
         }
     }
 	
