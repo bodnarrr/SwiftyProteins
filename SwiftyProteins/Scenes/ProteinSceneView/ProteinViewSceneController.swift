@@ -49,6 +49,11 @@ class ProteinViewSceneController : UIViewController {
         model?.proteinMaterial.selectNewMaterial(inViewController: self)
     }
 
+	@IBAction func shareAction(_ sender: UIBarButtonItem) {
+		shareScreenshot(sender)
+		
+	}
+	
     func setupCamera() -> SCNNode {
         cameraNode.camera = SCNCamera()
         cameraNode.position = SCNVector3Make(0, 0, 50)

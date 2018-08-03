@@ -66,4 +66,8 @@ class ProteinARViewController : UIViewController, ARSCNViewDelegate {
             }
         }
     }
+	@IBAction func shareAction(_ sender: UIBarButtonItem) {
+		shareScreenshot(sender)
+	}
+	
 }

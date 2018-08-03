@@ -131,6 +131,11 @@
                                             <action selector="materialsAction:" destination="WRY-aE-Vxj" id="Y9r-TF-VNH"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Share" id="xnP-9r-Rda">
+                                        <connections>
+                                            <action selector="shareAction:" destination="WRY-aE-Vxj" id="gtQ-R5-2GV"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -181,6 +186,11 @@
                                     <barButtonItem title="Materials" id="7ko-be-0Xj">
                                         <connections>
                                             <action selector="materialsAction:" destination="i6v-P7-nng" id="wvM-ox-yvu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Share" id="RNo-R5-7Wp" userLabel="Share">
+                                        <connections>
+                                            <action selector="shareAction:" destination="i6v-P7-nng" id="Wza-yk-IVd"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

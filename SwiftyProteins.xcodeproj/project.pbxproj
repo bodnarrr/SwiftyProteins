@@ -32,6 +32,7 @@
 		3B4DEEA52113583F00BB556E /* metal_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC2210F3E13004C02D5 /* metal_nrm.jpg */; };
 		3B4DEEA62113583F00BB556E /* metal_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC4210F3E13004C02D5 /* metal_rgh.jpg */; };
 		3B4DEEA72113583F00BB556E /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 84924B96210E46A800F8852D /* sunny.png */; };
+		3B61D38621146DD100321F21 /* UIViewController+Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B61D38521146DD100321F21 /* UIViewController+Sharing.swift */; };
 		3B8632D0210F6DFC002D4001 /* StartingNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8632CF210F6DFC002D4001 /* StartingNavigationViewController.swift */; };
 		843535532112532A00C118AD /* AtomTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843535522112532A00C118AD /* AtomTooltip.swift */; };
 		84353555211255DE00C118AD /* SCNVector3+LineEulerAngles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84353554211255DE00C118AD /* SCNVector3+LineEulerAngles.swift */; };
@@ -71,6 +72,7 @@
 		13868AC3210F3E13004C02D5 /* metal_met.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal_met.jpg; sourceTree = "<group>"; };
 		13868AC4210F3E13004C02D5 /* metal_rgh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal_rgh.jpg; sourceTree = "<group>"; };
 		13ECD0D7210E0E6D00A1CA7B /* SCNVector3Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCNVector3Extensions.swift; sourceTree = "<group>"; };
+		3B61D38521146DD100321F21 /* UIViewController+Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Sharing.swift"; sourceTree = "<group>"; };
 		3B8632CF210F6DFC002D4001 /* StartingNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingNavigationViewController.swift; sourceTree = "<group>"; };
 		69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyProteins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		843535522112532A00C118AD /* AtomTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomTooltip.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				843535582112564000C118AD /* UIColor+HexString.swift */,
 				8435355A2112567500C118AD /* UIColor+MidColor.swift */,
 				8435355C2112569B00C118AD /* SCNNode+LineNode.swift */,
+				3B61D38521146DD100321F21 /* UIViewController+Sharing.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B61D38621146DD100321F21 /* UIViewController+Sharing.swift in Sources */,
 				0D2BF1C0210DF7650023F98D /* TouchIdManager.swift in Sources */,
 				0D2BF1C3210E14150023F98D /* UIViewController+UnsafeAlert.swift in Sources */,
 				843535532112532A00C118AD /* AtomTooltip.swift in Sources */,
