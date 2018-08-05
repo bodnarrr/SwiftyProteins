@@ -11,7 +11,6 @@
 		0D2BF1BE210DF4A20023F98D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BF1BD210DF4A20023F98D /* LoginViewController.swift */; };
 		0D2BF1C0210DF7650023F98D /* TouchIdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BF1BF210DF7650023F98D /* TouchIdManager.swift */; };
 		0D2BF1C3210E14150023F98D /* UIViewController+UnsafeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2BF1C2210E14150023F98D /* UIViewController+UnsafeAlert.swift */; };
-		0DC0F3C92115FB7900E017A2 /* Plastic03_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4C21131375008D41D5 /* Plastic03_nrm.jpg */; };
 		0DDA0273210CA23F0087C42F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA0272210CA23F0087C42F /* AppDelegate.swift */; };
 		0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0276210CA23F0087C42F /* Main.storyboard */; };
 		0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA0279210CA23F0087C42F /* Assets.xcassets */; };
@@ -293,7 +292,6 @@
 				0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */,
 				0DDA0278210CA23F0087C42F /* Main.storyboard in Resources */,
 				0DDA028E210CA50A0087C42F /* ligands.txt in Resources */,
-				0DC0F3C92115FB7900E017A2 /* Plastic03_nrm.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

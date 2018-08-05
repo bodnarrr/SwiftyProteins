@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CcX-Se-gTo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CcX-Se-gTo">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica-Light</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Table Scene View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -75,7 +83,7 @@
                                 </constraints>
                                 <items>
                                     <tabBarItem title="SceneKit" image="scenekit-icon-resized" id="fzc-WK-Cah"/>
-                                    <tabBarItem title="ARKit" image="arkit-resized" id="pIq-je-uJq"/>
+                                    <tabBarItem title="ARKit" image="arkit-icon-resized" id="pIq-je-uJq"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -313,8 +321,8 @@ TouchID</string>
         </scene>
     </scenes>
     <resources>
-        <image name="arkit-resized" width="16" height="16"/>
-        <image name="scenekit-icon-resized" width="16" height="16"/>
+        <image name="arkit-icon-resized" width="12" height="12"/>
+        <image name="scenekit-icon-resized" width="12" height="12"/>
         <image name="touch_id_icon" width="250" height="250"/>
     </resources>
 </document>
