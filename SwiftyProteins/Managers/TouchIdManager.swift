@@ -34,9 +34,8 @@ class TouchIdManager {
 						viewController.performSegue(withIdentifier: "segueToTableScene", sender: self)
 					}
 				} else {
-					print(evaluateError?.localizedDescription)
 					if evaluateError?.localizedDescription == "Fallback authentication mechanism selected." {
-						context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Enter your password", reply: { (success, error) in
+						context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Logging in with Touch ID") { [weak self] (success, evaluateError) in
 							if success {
 								if (self?.authorized)! {
 									viewController.dismiss(animated: true, completion: nil)
@@ -45,7 +44,7 @@ class TouchIdManager {
 									viewController.performSegue(withIdentifier: "segueToTableScene", sender: self)
 								}
 							}
-						})
+						}
 					}
 				}
 			}
