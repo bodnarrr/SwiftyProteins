@@ -33,6 +33,15 @@
 		8435355D2112569B00C118AD /* SCNNode+LineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435355C2112569B00C118AD /* SCNNode+LineNode.swift */; };
 		8435355F2112570700C118AD /* ProteinARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435355E2112570700C118AD /* ProteinARViewController.swift */; };
 		84924B93210CFBAF00F8852D /* ProteinViewSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84924B92210CFBAF00F8852D /* ProteinViewSceneController.swift */; };
+		84DCEEA021170CBE00592D7B /* Plastic03_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4C21131375008D41D5 /* Plastic03_nrm.jpg */; };
+		84DCEEA121170CBE00592D7B /* Plastic03_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4A21131375008D41D5 /* Plastic03_rgh.jpg */; };
+		84DCEEA221170CBE00592D7B /* Leather05_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4821130DA6008D41D5 /* Leather05_nrm.jpg */; };
+		84DCEEA321170CBE00592D7B /* Leather05_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13184D4621130DA0008D41D5 /* Leather05_rgh.jpg */; };
+		84DCEEA421170CBE00592D7B /* sunnyBlurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 1343C8C22111C0AE00E6830F /* sunnyBlurred.png */; };
+		84DCEEA521170CBE00592D7B /* metal_met.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC3210F3E13004C02D5 /* metal_met.jpg */; };
+		84DCEEA621170CBE00592D7B /* metal_nrm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC2210F3E13004C02D5 /* metal_nrm.jpg */; };
+		84DCEEA721170CBE00592D7B /* metal_rgh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13868AC4210F3E13004C02D5 /* metal_rgh.jpg */; };
+		84DCEEA821170CBE00592D7B /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 84924B96210E46A800F8852D /* sunny.png */; };
 		90E414E2E28C1714C7367973 /* Pods_SwiftyProteins.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C0C303868BE67282B1A2B1 /* Pods_SwiftyProteins.framework */; };
 /* End PBXBuildFile section */
 
@@ -287,6 +296,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DCEEA021170CBE00592D7B /* Plastic03_nrm.jpg in Resources */,
+				84DCEEA121170CBE00592D7B /* Plastic03_rgh.jpg in Resources */,
+				84DCEEA221170CBE00592D7B /* Leather05_nrm.jpg in Resources */,
+				84DCEEA321170CBE00592D7B /* Leather05_rgh.jpg in Resources */,
+				84DCEEA421170CBE00592D7B /* sunnyBlurred.png in Resources */,
+				84DCEEA521170CBE00592D7B /* metal_met.jpg in Resources */,
+				84DCEEA621170CBE00592D7B /* metal_nrm.jpg in Resources */,
+				84DCEEA721170CBE00592D7B /* metal_rgh.jpg in Resources */,
+				84DCEEA821170CBE00592D7B /* sunny.png in Resources */,
 				0DDA0295210CBBBC0087C42F /* Podfile in Resources */,
 				0DDA027D210CA23F0087C42F /* LaunchScreen.storyboard in Resources */,
 				0DDA027A210CA23F0087C42F /* Assets.xcassets in Resources */,
@@ -503,7 +521,7 @@
 				DEVELOPMENT_TEAM = 6CXT6RVZG5;
 				INFOPLIST_FILE = SwiftyProteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ua.unit.SwiftyProteins;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.unit.SwiftyProtein;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -519,7 +537,7 @@
 				DEVELOPMENT_TEAM = 6CXT6RVZG5;
 				INFOPLIST_FILE = SwiftyProteins/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ua.unit.SwiftyProteins;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.unit.SwiftyProtein;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
