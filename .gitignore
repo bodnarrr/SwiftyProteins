@@ -6,6 +6,7 @@
 *.hdr
 *.tga
 *.jpg
+*.png
 
 ## Build generated
 build/
